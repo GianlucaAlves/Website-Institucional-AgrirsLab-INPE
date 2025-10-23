@@ -21,35 +21,112 @@ body {
     font-size:32px;
     margin-bottom:8px;
 }
-.filters{
-    border-top: 2px solid transparent;
-    margin:18px 0 8px;
-    padding-top: 6px;
-    justify-items: center;
-}
-#form-filters {
+form {
+    height: fit-content;
+    max-width: 100%;
+    width: 100%;
+    background-color: #0574BB1A;
+    padding: 20px;
     display: flex;
-    gap:12px;
+    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap
+    box-sizing: border-box;
+
+
 }
-#form-filters select, #form-filters input {
-    padding: 4px 5px;
-    border: 1px solid #cfcfcf;
-    border-radius: 1px;
-}
-#form-filters button{
-    padding: 4px 6px;
+
+#palavra-chave {
+    width: 600px;
     border-radius: 25px;
-    border:none;
-    cursor: pointer;
+    background-color: #245C4D4D;
+    border-color: #2F4F4F;
+}
+
+#palavra-chave::placeholder {
+    color: #00000080;
+    text-indent: 20px;
+}
+
+fieldset {
+    border: none;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+legend {
+    margin-right: 20px;
+    float: left;
+}
+
+.pr-filters {
+    margin: 1rem;
+    justify-content: center;
+    border-radius: 25px;
+    background-color: #2F4F4F;
     color: white;
+    padding: 3px;
+    border: none;
 }
-#filtrar{
-    background: #1e90ff;
+
+#nomeprojeto::placeholder {
+    color: white;
+    text-indent: 10px;
 }
-#limpar{
-    background: gray;
+
+.search-box {
+    position: relative;
+    display: flex;
+
+}
+
+.search-box input {
+    width: 300px;
+    padding: 3px 5px;
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: #007bff;
+}
+
+.search-button {
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.search-button svg {
+    color: #888;
+    transition: color 0.2s ease;
+}
+
+.search-button:hover svg {
+    color: #007bff;
+}
+
+#aplicar {
+    max-width: 100%;
+    width: 200px;
+    padding: 3px;
+    background-color: #0574BB;
+    border-radius: 25px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    height: 32px;
+
+
 }
 .pubs-grid{
     display:grid;
@@ -123,6 +200,7 @@ body {
     cursor:pointer;
     margin-top: 12px;
     color:#0574BB;
+    text-decoration: none;
 }
 #pu-line{
     width:100%;
