@@ -1,0 +1,19 @@
+{
+  "name": "abp-1",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">\r       <img src=\"src/assets/image/nhdevlogo.png\" alt=\"nighthawks\" width=\"200px\">\r       <h2 align=\"center\"> NightHawks</h2>\r </p>",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemailer": "^7.0.9"
+  }
+}

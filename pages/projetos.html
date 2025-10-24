@@ -144,7 +144,9 @@
     <div class="title-line"></div>
 
     <section>
-      <form>
+
+      <form id="pr-filter"> 
+
         <div class="search-box">
           <input type="text" name="palavra-chave" placeholder=" Palavra-chave" id="palavra-chave" />
           <button id="search-button" class="search-button">
@@ -156,36 +158,68 @@
             </svg>
           </button>
         </div>
+
         <fieldset>
           <legend><b>Filtrar por:</b></legend>
+
           <div class="pr-search-item">
             <label for="situacao">Situação:</label>
-            <select name="situacao" class="pr-filters">
+            <select name="situacao" class="pr-filters" id="pr-status">
               <option value="concluido">Concluido</option>
               <option value="andamento">Em andamento</option>
               <option value="agendado">Agendado</option>
             </select>
           </div>
+
           <div class="pr-search-item">
             <label for="data">Data:</label>
-            <input type="date" name="data" class="pr-filters" />
+            <input type="date" name="data" class="pr-filters" id="pr-date"/>
           </div>
+
           <div class="pr-search-item">
             <label for="nome">Nome:</label>
-            <input type="text" name="nome" class="pr-filters" placeholder="Nome" id="nomeprojeto" />
+            <input type="text" name="nome" class="pr-filters" placeholder="Nome" id="pr-nome" />
           </div>
 
           <div class="pr-search-item">
             <button type="submit" id="aplicar">Aplicar</button>
           </div>
+
         </fieldset>
+
       </form>
+
       <article>
         <img src="../src/assets/image/pc_home_carrosel1.webp" alt="projeto1" />
         <div class="article-text">
           <a href="#">
             <h2>
               Mapeamento da Biodiversidade Amazônica em escalas múltiplas por
+              meio da integração de dados geológicos e ecológicos
+            </h2>
+          </a>
+          <p>
+            Desenvolver e cecon técnicas de sensoriamento remoto que sejam
+            de utilidade para a caracterização de áreas de cobertura
+            sedimentar do território brasileiro, visando reconstituir seus
+            ambientes de formação no tempo e espaço. Procura-se, com isto,
+            criar uma base de dados sólida que contribua na análise de fatores
+            prováveis que atuaram na evolução dos ambientes físicos ao longo
+            do tempo geológico. Esses fatores incluem principalmente
+            flutuações climáticas, variações do nível do mar e movimentações
+            tectônicas em escalas local e regional...
+          </p>
+          <h5>Situação: Em andamento</h5>
+         <h6 data-date="2007-10-31">Data de inicio: 31-10-2007</h6>
+        </div>
+      </article>
+
+      <article>
+        <img src="../src/assets/image/pc_home_carrosel2.webp" alt="projeto3" />
+        <div class="article-text">
+          <a href="#">
+            <h2>
+              Mapeamento da cecon Biodiversidade Amazônica em escalas múltiplas por
               meio da integração de dados geológicos e ecológicos
             </h2>
           </a>
@@ -200,8 +234,8 @@
             flutuações climáticas, variações do nível do mar e movimentações
             tectônicas em escalas local e regional...
           </p>
-          <h6>Situação: Em andamento</h6>
-          <h6>Data de inicio: 31/10/2007</h6>
+          <h5>Situação: Em andamento</h5>
+         <h6 data-date="2007-10-31">Data de inicio: 31-10-2007</h6>
         </div>
       </article>
 
@@ -225,8 +259,8 @@
             flutuações climáticas, variações do nível do mar e movimentações
             tectônicas em escalas local e regional...
           </p>
-          <h6>Situação: Em andamento</h6>
-          <h6>Data de inicio: 31/10/2007</h6>
+          <h5>Situação: Concluido</h5>
+         <h6 data-date="2008-10-31">Data de inicio: 31-10-2008</h6>
         </div>
       </article>
 
@@ -250,16 +284,143 @@
             flutuações climáticas, variações do nível do mar e movimentações
             tectônicas em escalas local e regional...
           </p>
-          <h6>Situação: Em andamento</h6>
-          <h6>Data de inicio: 31/10/2007</h6>
+          <h5>Situação: Em andamento</h5>
+         <h6 data-date="2007-11-30">Data de inicio: 30-11-2007</h6>
+        </div>
+      </article>
+
+      <article>
+        <img src="../src/assets/image/pc_home_carrosel3.webp" alt="projeto3" />
+        <div class="article-text">
+          <a href="#">
+            <h2>
+              Mapeamento da Biodiversidade Amazônica em escalas múltiplas por
+              meio da integração de dados geológicos e ecológicos
+            </h2>
+          </a>
+          <p>
+            Desenvolver e explorar técnicas de sensoriamento remoto que sejam
+            de utilidade para a caracterização de áreas de cobertura
+            sedimentar do território brasileiro, visando reconstituir seus
+            ambientes de formação no tempo e espaço. Procura-se, com isto,
+            criar uma base de dados sólida que contribua na análise de fatores
+            prováveis que atuaram na evolução dos ambientes físicos ao longo
+            do tempo geológico. Esses fatores incluem principalmente
+            flutuações climáticas, variações do nível do mar e movimentações
+            tectônicas em escalas local e regional...
+          </p>
+          <h5>Situação: Em andamento</h5>
+         <h6 data-date="2007-10-31">Data de inicio: 31-10-2007</h6>
+        </div>
+      </article>
+
+      <article>
+        <img src="../src/assets/image/pc_home_carrosel3.webp" alt="projeto3" />
+        <div class="article-text">
+          <a href="#">
+            <h2>
+              Mapeamento da Biodiversidade Amazônica em escalas múltiplas por
+              meio da integração de dados geológicos e ecológicos
+            </h2>
+          </a>
+          <p>
+            Desenvolver e explorar técnicas de sensoriamento remoto que sejam
+            de utilidade para a caracterização de áreas de cobertura
+            sedimentar do território brasileiro, visando reconstituir seus
+            ambientes de formação no tempo e espaço. Procura-se, com isto,
+            criar uma base de dados sólida que contribua na análise de fatores
+            prováveis que atuaram na evolução dos ambientes físicos ao longo
+            do tempo geológico. Esses fatores incluem principalmente
+            flutuações climáticas, variações do nível do mar e movimentações
+            tectônicas em escalas local e regional...
+          </p>
+          <h5>Situação: Em andamento</h5>
+         <h6 data-date="2007-10-31">Data de inicio: 31-10-2007</h6>
+        </div>
+      </article>
+
+      <article>
+        <img src="../src/assets/image/pc_home_carrosel3.webp" alt="projeto3" />
+        <div class="article-text">
+          <a href="#">
+            <h2>
+              Mapeamento da Biodiversidade Amazônica em escalas múltiplas por
+              meio da integração de dados geológicos e ecológicos
+            </h2>
+          </a>
+          <p>
+            Desenvolver e explorar técnicas de sensoriamento remoto que sejam
+            de utilidade para a caracterização de áreas de cobertura
+            sedimentar do território brasileiro, visando reconstituir seus
+            ambientes de formação no tempo e espaço. Procura-se, com isto,
+            criar uma base de dados sólida que contribua na análise de fatores
+            prováveis que atuaram na evolução dos ambientes físicos ao longo
+            do tempo geológico. Esses fatores incluem principalmente
+            flutuações climáticas, variações do nível do mar e movimentações
+            tectônicas em escalas local e regional...
+          </p>
+          <h5>Situação: Em andamento</h5>
+         <h6 data-date="2007-10-31">Data de inicio: 31-10-2007</h6>
+        </div>
+      </article>
+
+      <article>
+        <img src="../src/assets/image/pc_home_carrosel3.webp" alt="projeto3" />
+        <div class="article-text">
+          <a href="#">
+            <h2>
+              Mapeamento da Biodiversidade Amazônica em escalas múltiplas por
+              meio da integração de dados geológicos e ecológicos
+            </h2>
+          </a>
+          <p>
+            Desenvolver e explorar técnicas de sensoriamento remoto que sejam
+            de utilidade para a caracterização de áreas de cobertura
+            sedimentar do território brasileiro, visando reconstituir seus
+            ambientes de formação no tempo e espaço. Procura-se, com isto,
+            criar uma base de dados sólida que contribua na análise de fatores
+            prováveis que atuaram na evolução dos ambientes físicos ao longo
+            do tempo geológico. Esses fatores incluem principalmente
+            flutuações climáticas, variações do nível do mar e movimentações
+            tectônicas em escalas local e regional...
+          </p>
+          <h5>Situação: Em andamento</h5>
+         <h6 data-date="2007-10-31">Data de inicio: 31-10-2007</h6>
+        </div>
+      </article>
+
+      <article>
+        <img src="../src/assets/image/pc_home_carrosel3.webp" alt="projeto3" />
+        <div class="article-text">
+          <a href="#">
+            <h2>
+              Mapeamento da Biodiversidade Amazônica em escalas múltiplas por
+              meio da integração de dados geológicos e ecológicos
+            </h2>
+          </a>
+          <p>
+            Desenvolver e explorar técnicas de sensoriamento remoto que sejam
+            de utilidade para a caracterização de áreas de cobertura
+            sedimentar do território brasileiro, visando reconstituir seus
+            ambientes de formação no tempo e espaço. Procura-se, com isto,
+            criar uma base de dados sólida que contribua na análise de fatores
+            prováveis que atuaram na evolução dos ambientes físicos ao longo
+            do tempo geológico. Esses fatores incluem principalmente
+            flutuações climáticas, variações do nível do mar e movimentações
+            tectônicas em escalas local e regional...
+          </p>
+          <h5>Situação: Em andamento</h5>
+         <h6 data-date="2007-10-31">Data de inicio: 31-10-2007</h6>
         </div>
       </article>
       <div class="main-buttons-pos">
-        <button type="submit" class="main-buttons">Anterior</button>
-        <button type="submit" class="main-buttons">Proximo</button>
+        <button type="submit" class="main-buttons" id="prev">Anterior</button>
+        <button type="submit" class="main-buttons" id="prox">Proximo</button>
       </div>
     </section>
   </main>
+  <script src="../src/scripts/projetos.js"></script>
+  <script src="../src/scripts/filtro.js"></script>
   <footer>
     <div class="footer">
       <div class="footer-title"><a href=""></a><b>AgriRSLab</b></div>

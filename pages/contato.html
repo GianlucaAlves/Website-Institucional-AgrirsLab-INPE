@@ -158,19 +158,21 @@
                 </div>
             </div>
             <div class="co-form-right">
-
-                <form action="">
+                
+                <form action="http://localhost:3000/enviar" method="post" id="formulario-contato">
                     <h1 class="co-form-title">Fale com a gente!</h1>
 
                     <input type="text" name="nome" id="nome" placeholder="Nome">
                     <input type="email" name="email" id="email" placeholder="E-mail">
                     <input type="text" name="assunto" id="assunto" placeholder="Assunto">
                     <textarea name="mensagem" id="mensagem" placeholder="Sua mensagem"></textarea>
-                    <div class="co-button"><button id="submit">Enviar</button></div>
+                    <div class="co-button"><button id="btn-enviar">Enviar</button></div>
                 </form>
             </div>
         </div>
     </main>
+
+    <script src="../src/scripts/contato.js"></script>
 
     <footer>
         <div class="footer">
