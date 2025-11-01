@@ -1,74 +1,78 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Pega o id da notícia da URL
-  const params = new URLSearchParams(window.location.search);
-  const id = parseInt(params.get('id'));
+async function findImage(base) {
+  const exts = ["webp", "jpg", "png"];
+  console.log(`[findImage] Buscando imagem com base: ${base}`); // LOG 1
 
-  // Puxa os posts do backend
-  fetch('http://localhost:3000/posts')
-    .then(res => res.json())
-    .then(posts => {
-      const noticia = posts.find(p => p.id_conteudo === id);
+  const check = (url) =>
+    new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => resolve(url);
+      img.onerror = () => {
+        console.log(`[findImage] Falha ao carregar: ${url}`); // LOG 2
+        reject();
+      };
+      img.src = url;
+    });
 
-      if (!noticia) {
-        console.error('Notícia não encontrada');
-        return;
-      }
+  for (const ext of exts) {
+    const path = `${base}.${ext}`;
+    try {
+      await check(path);
+      console.log(`[findImage] SUCESSO! Imagem encontrada: ${path}`); // LOG 3
+      return path;
+    } catch (e) {
+      // Tenta o próximo
+    }
+  }
+  console.warn(`[findImage] Nenhuma imagem encontrada para base: ${base}`); // LOG 4
+  return null;
+}
 
-      // Atualiza título, lide e data
-      document.querySelector('.ni-title h1').textContent = noticia.co_titulo || '';
-      document.querySelector('.ni-title p').textContent = noticia.co_lide || '';
-      document.querySelector('.ni-date p').textContent = noticia.co_data ? `Publicada em ${new Date(noticia.co_data).toLocaleDateString()}` : '';
+/*
+  Nosso script principal
+*/
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const id = parseInt(params.get("id"));
+    console.log(`[Noticia Individual] ID da URL: ${id}`); // LOG A
 
-      // Conteúdo completo
-      document.querySelector('.ni-text p').textContent = noticia.co_conteudo || '';
+    if (!id) {
+      console.error("Notícia não encontrada (sem ID)");
+      return;
+    }
 
-      // Autor
-      if (noticia.autor_nome) {
-        document.querySelector('.ni-author p').textContent = `Por ${noticia.autor_nome}`;
-      }
+    const res = await fetch(`http://localhost:3000/posts/${id}`);
+    const noticia = await res.json();
+    console.log("[Noticia Individual] Dados recebidos:", noticia); // LOG B
 
-      // Referência
-      if (noticia.co_citacao) {
-        document.querySelector('.ni-reference p').textContent = noticia.co_citacao;
-      }
+    if (!noticia) {
+      console.error("Notícia não encontrada no backend");
+      return;
+    }
 
-      // Seleciona a div que irá ter o background (ajuste conforme sua estrutura HTML)
-      const imgDiv = document.querySelector('.ni-img');
-      if (!imgDiv) {
-        console.error('A div com a classe "ni-img" não foi encontrada.');
-        return;
-      }
+    // Atualiza HTML
+    document.querySelector(".ni-title h1").textContent =
+      noticia.co_titulo || "";
+    document.querySelector(".ni-title p").textContent = noticia.co_lide || "";
+    document.querySelector(".ni-date p").textContent = noticia.co_data
+      ? `Publicada em ${new Date(noticia.co_data).toLocaleDateString()}`
+      : "";
+    document.querySelector(".ni-text p").innerHTML = noticia.co_conteudo
+      ? noticia.co_conteudo.replace(/\n/g, "<br>")
+      : "";
+    // (Pode adicionar .ni-author e .ni-reference se tiver no HTML)
 
-      // Imagem como background inline (mesmo esquema que você mandou)
-      const exts = ["jpg", "png", "webp"];
-      let found = false;
+    // IMAGEM
+    const imgDiv = document.querySelector(".ni-img");
+    const base = `../src/assets/image/co${noticia.id_conteudo}`;
 
-      exts.forEach(ext => {
-        const url = `../src/assets/image/co${noticia.id_conteudo}.${ext}`;
-        console.log("Tentando carregar imagem:", url);
-        const img = new Image();
-        img.src = url;
+    const imageUrl = await findImage(base); // Usa a função mestre
 
-        img.onload = () => {
-          if (!found) {
-            found = true;
-            console.log("Imagem carregada com sucesso:", url);
-            imgDiv.style.backgroundImage = `url('${url}')`;
-          }
-        };
-
-        img.onerror = () => {
-          console.error("Erro ao carregar a imagem:", url);
-        };
-      });
-
-      setTimeout(() => {
-        if (!found) {
-          imgDiv.style.backgroundImage = `url('../src/assets/image/co3.webp')`;
-          console.log("Fallback para imagem padrão");
-        }
-      }, 300);
-
-    })
-    .catch(err => console.error('Erro ao carregar notícia:', err));
+    if (imageUrl) {
+      imgDiv.style.backgroundImage = `url('${imageUrl}')`;
+    }
+    // Se não achou, deixa a imagem padrão do CSS
+  } catch (err) {
+    console.error("Erro ao carregar notícia:", err);
+  }
 });

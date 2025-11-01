@@ -1,6 +1,35 @@
 import express from "express";
 import pool from "../db.js";
 
+// ESSA É A FUNÇÃO QUE FALTAVA
+async function getPostById(req, res) {
+  try {
+    const { id } = req.params; // Pega o 'id' da URL (ex: /posts/7)
+    
+    // Query pra buscar UM item pelo ID, juntando nome do autor
+    const query = `
+      SELECT c.*, m.me_nome AS autor_nome
+      FROM conteudo c
+      LEFT JOIN membros m ON c.co_autor = m.id_membro
+      WHERE c.id_conteudo = $1
+    `;
+    
+    const result = await pool.query(query, [id]);
+
+    // Vê se achou alguma coisa
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: "Vaga não encontrada" });
+    }
+
+    // Se achou, manda pro frontend (só o primeiro item)
+    res.json(result.rows[0]);
+
+  } catch (err) {
+    console.error("Erro ao buscar conteúdo por ID:", err);
+    res.status(500).json({ error: "Erro ao buscar conteúdo por ID" });
+  }
+}
+
 const router = express.Router();
 
 // CREATE
@@ -69,6 +98,8 @@ router.get("/", async (req, res) => {
     res.status(500).json({ error: "Erro ao listar conteúdos" });
   }
 });
+
+router.get("/:id", getPostById); // Isso vai pegar o /posts/7
 
 // UPDATE
 router.put("/:id", async (req, res) => {

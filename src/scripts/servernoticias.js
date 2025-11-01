@@ -1,3 +1,35 @@
+/*
+  Função MESTRE para checar imagens.
+  Ela é async e retorna a URL que funcionar, ou null.
+*/
+async function findImage(base) {
+  const exts = ["webp", "jpg", "png"]; // Ordem de prioridade
+
+  // Função helper que usa Promise
+  const check = (url) =>
+    new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => resolve(url);
+      img.onerror = () => reject();
+      img.src = url;
+    });
+
+  for (const ext of exts) {
+    const path = `${base}.${ext}`;
+    try {
+      await check(path); // Tenta carregar
+      return path; // Sucesso! Retorna o caminho
+    } catch (e) {
+      // Falhou, tenta o próximo
+    }
+  }
+
+  return null; // Nenhuma funcionou
+}
+
+/*
+  Nosso script principal
+*/
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     const res = await fetch("http://localhost:3000/posts?tipo=2"); // notícias
@@ -5,7 +37,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const cards = document.querySelectorAll(".no-content");
 
-    cards.forEach((card, i) => {
+    // O forEach precisa ser async pra gente poder usar await dentro dele
+    cards.forEach(async (card, i) => {
       const pub = noticias[i];
 
       if (!pub) {
@@ -14,27 +47,21 @@ document.addEventListener("DOMContentLoaded", async () => {
       }
 
       // ===============================
-      //   IMAGEM (webp → jpg → png → default)
+      //   IMAGEM (O Jeito Certo)
       // ===============================
       const imgDiv = card.querySelector("[class^='no-img']");
       if (imgDiv) {
+        // CORREÇÃO DO ERRO DE DIGITAÇÃO AQUI:
         const base = `../src/assets/image/co${pub.id_conteudo}`;
 
-        const tryLoad = async (exts) => {
-          for (let ext of exts) {
-            const path = `${base}.${ext}`;
-            try {
-              const res = await fetch(path, { method: "HEAD" });
-              if (res.ok) {
-                imgDiv.style.backgroundImage = `url('${path}')`;
-                return true;
-              }
-            } catch (e) { }
-          }
-          imgDiv.style.backgroundImage = `url('../src/assets/image/default.png')`;
-        };
+        const imageUrl = await findImage(base); // Usa a função mestre
 
-        tryLoad(["webp", "jpg", "png"]);
+        if (imageUrl) {
+          imgDiv.style.backgroundImage = `url('${imageUrl}')`;
+        } else {
+          // Usa a imagem padrão se não achar NENHUMA
+          imgDiv.style.backgroundImage = `url('../src/assets/image/default.png')`;
+        }
       }
 
       // ===============================
@@ -60,9 +87,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       const a = card.querySelector("a");
       if (a) a.removeAttribute("href");
     });
-
   } catch (err) {
     console.error("Erro ao carregar notícias:", err);
   }
 });
-
