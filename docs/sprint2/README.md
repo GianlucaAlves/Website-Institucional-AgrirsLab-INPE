@@ -61,7 +61,7 @@ Desenvolver banco de dados iniciando através da 'entidade-relação' e dar iní
 ##  Burndown Chart 📉🔥 <a id="burndown"></a>
 
 <p align="center">
-  <img src="#" alt="BurnDown Sprint 2" width="400px" />
+  <img src="Burndown_spr2.png" alt="BurnDown Sprint 2" width="400px" />
 </p>
 
 
