@@ -27,6 +27,7 @@
       width: 300px;
       display: block;
       border-radius: 20px 20px 0px 0px;
+      object-fit: cover;
 }
 
 .mb-bottom {

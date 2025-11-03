@@ -239,10 +239,14 @@ footer {
 
 .footer-options {
   display: flex;
-  justify-content: space-between;
-  width: 30%;
+  justify-content: center;
+  width: 50%;
   margin-bottom: 8px;
   margin-top: 5px;
+}
+
+.footer-options b{
+  margin-right: 8px;
 }
 
 .footer-title {

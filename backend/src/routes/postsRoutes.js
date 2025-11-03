@@ -1,6 +1,35 @@
 import express from "express";
 import pool from "../db.js";
 
+
+async function getPostById(req, res) {
+  try {
+    const { id } = req.params; // Pega o 'id' da URL (ex: /posts/7)
+    
+    // Query pra buscar UM item pelo ID, juntando nome do autor
+    const query = `
+      SELECT c.*, m.me_nome AS autor_nome
+      FROM conteudo c
+      LEFT JOIN membros m ON c.co_autor = m.id_membro
+      WHERE c.id_conteudo = $1
+    `;
+    
+    const result = await pool.query(query, [id]);
+
+    // Vê se achou alguma coisa
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: "Vaga não encontrada" });
+    }
+
+    // Se achou, manda pro frontend (só o primeiro item)
+    res.json(result.rows[0]);
+
+  } catch (err) {
+    console.error("Erro ao buscar conteúdo por ID:", err);
+    res.status(500).json({ error: "Erro ao buscar conteúdo por ID" });
+  }
+}
+
 const router = express.Router();
 
 // CREATE
@@ -70,32 +99,60 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/:id", getPostById); // Isso vai pegar o /posts/7
+
 // UPDATE
 router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const { co_titulo, co_autor, co_pdf, co_citacao, co_doi, co_data, co_lide,
-            co_status, co_data_inicio, co_data_termino, co_objetivo, co_requisitos,
-            co_plano_trabalho, co_atividades, co_tipo_conteudo } = req.body;
 
-    const result = await pool.query(
-      `UPDATE conteudo SET
-        co_titulo=$1, co_autor=$2, co_pdf=$3, co_citacao=$4, co_doi=$5, co_data=$6, co_lide=$7,
-        co_status=$8, co_data_inicio=$9, co_data_termino=$10, co_objetivo=$11, co_requisitos=$12,
-        co_plano_trabalho=$13, co_atividades=$14, co_tipo_conteudo=$15
-       WHERE id_conteudo=$16 RETURNING *`,
-      [co_titulo, co_autor, co_pdf, co_citacao, co_doi, co_data, co_lide,
-       co_status, co_data_inicio, co_data_termino, co_objetivo, co_requisitos,
-       co_plano_trabalho, co_atividades, co_tipo_conteudo, id]
-    );
+    const fields = [];
+    const values = [];
+    let index = 1;
 
-    if (result.rows.length === 0) return res.status(404).json({ error: "Conteúdo não encontrado" });
+    for (const [key, value] of Object.entries(req.body)) {
+      // Ignorar campos vazios ou nulos (evitar "")
+      if (value === "" || value === null || value === undefined) continue;
+
+      // Converter para número quando fizer sentido (evita erro em INT)
+      const parsedValue =
+        !isNaN(value) && value !== "" && value !== null
+          ? Number(value)
+          : value;
+
+      fields.push(`${key} = $${index}`);
+      values.push(parsedValue);
+      index++;
+    }
+
+    if (fields.length === 0) {
+      return res.status(400).json({ error: "Nenhum dado válido enviado para atualização" });
+    }
+
+    // Adiciona ID ao final
+    values.push(Number(id));
+
+    const query = `
+      UPDATE conteudo
+      SET ${fields.join(", ")}
+      WHERE id_conteudo = $${index}
+      RETURNING *;
+    `;
+
+    const result = await pool.query(query, values);
+
+    if (result.rows.length === 0) {
+      return res.status(404).json({ error: "Conteúdo não encontrado" });
+    }
+
     res.json(result.rows[0]);
   } catch (err) {
-    console.error("Erro ao atualizar conteúdo:", err);
+    console.error("Erro ao atualizar conteúdo:", err.message, err);
     res.status(500).json({ error: "Erro ao atualizar conteúdo" });
   }
 });
+
+
 
 // DELETE
 router.delete("/:id", async (req, res) => {
