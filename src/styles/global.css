@@ -121,14 +121,20 @@ header {
   justify-content: space-around;
 }
 
-.logo {
+.logo { 
   flex: 1;
   height: 70px;
   background-image: url(../assets/image/Logo.svg);
-  background-size: contain;
+  background-size: 56%;         /* valor numérico (não use 'contain') */
   background-position: center;
   background-repeat: no-repeat;
+  transition: background-size .6s cubic-bezier(.22,.9,.35,1);
 }
+
+.logo:hover {
+  background-size: 60%;
+}
+
 
 .box {
   flex: 1;
