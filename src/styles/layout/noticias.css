@@ -1,0 +1,122 @@
+.no-title {
+  color: #2f4f4f;
+  width: 80%;
+  align-items: baseline;
+  display: flex;
+
+  flex-direction: column;
+}
+
+.no-text {
+  width: 65%;
+  margin-left: 5%;
+  max-height: 150px;
+}
+
+.no-lf {
+  border-color: #000000;
+  box-sizing: border-box;
+  width: 80%;
+  opacity: 50%;
+  margin-left: 10%;
+}
+
+.noticias-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr; /* uma coluna para manter aparência antiga */
+  gap: 20px;
+  /* ou flex, se quiser centralizar */
+}
+.no-content {
+  width: 80%;
+  height: 200px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-left: 10%;
+  min-height: 200px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  background-color: rgb(207, 219, 207);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.no-content:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.no-title hr {
+  border-color: #000000;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.no-main {
+  display: flex;
+  justify-content: center;
+}
+
+.no-img {
+  width: 30%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+.no-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Faz a imagem preencher o espaço cortando os excessos se necessário */
+  border-radius: 10px; /* Garante que a imagem respeite o arredondamento */
+  display: block; /* Remove espaços extras abaixo da imagem */
+}
+
+.no-sub {
+  color: #2f4f4f;
+}
+
+.no-buttons {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: end;
+  gap: 10px;
+  margin-top: 10px;
+  width: 90%;
+
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+@media (max-width: 768px) {
+  .no-content {
+    flex-direction: column;
+    width: 90%;
+    margin-left: 5%;
+    height: auto;
+    font-size: 12px;
+  }
+
+  .no-text {
+    text-align: justify;
+    width: 80%;
+    margin-bottom: 10px;
+  }
+
+  .no-lf {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .no-img {
+    width: 80%;
+    height: 200px;
+    margin-top: 10px;
+  }
+}

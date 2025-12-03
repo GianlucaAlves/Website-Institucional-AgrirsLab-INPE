@@ -1,0 +1,72 @@
+body {
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contêiner principal */
+.wrapper {
+  display: flex;
+  width: 800px;
+  height: 450px;      /* altura fixa do card */
+  background: #245C4D;
+  border-radius: 12px;
+  overflow: hidden;   /* importante para a imagem ficar contida */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* sombra leve */
+}
+
+/* Painel da imagem */
+.image-panel {
+  flex: 1; /* ocupa metade */
+  background-image: url("../../src/assets/image/pc_home_carrosel2.webp");
+  background-size: cover;       /* cobre toda a área */
+  background-position: center;  /* centraliza */
+  background-repeat: no-repeat; 
+}
+
+/* Área de login */
+.login-container {
+  flex: 1; /* metade do card */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
+  background: #245C4D;
+}
+
+.login-container h2 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.login-container input,
+.login-container button {
+  width: 100%;
+  max-width: 280px;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+}
+
+.login-container input {
+  border: 1px solid #ccc;
+}
+
+.login-container button {
+  border: none;
+  background: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease; /* transição suave */
+}
+
+.login-container button:hover {
+  background: #429dff;
+}
+
+
+#error-message{
+  text-align: center;
+  color: white;
+}

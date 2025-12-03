@@ -1,0 +1,877 @@
+:root {
+    --color-1: #2F4F4F;
+    --color-2: #ffffff;
+    --color-3: #000000;
+    --color-4: #efecec;
+    --color-5: #245C4D;
+    --color-6: #0574BB;
+}
+
+/* ========================================================= */
+/* ESTILO FINAL E SIMPLIFICADO PARA OS CARROSSÉIS       */
+/* ========================================================= */
+
+/* --- GERAL --- */
+.ho-carrosel {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.ho-carrosel input {
+    display: none;
+}
+
+/* --- CARROSSEL DE CIMA (PRINCIPAL) --- */
+.ho-carrosel:not(.feat) {
+    height: 700px;
+}
+
+.ho-carrosel:not(.feat) .ho-slides {
+    width: 400%;
+    height: 100%;
+    display: flex;
+    transition: margin-left 0.5s ease;
+}
+
+.ho-carrosel:not(.feat) .ho-slides>div {
+    width: 25%;
+    background-size: cover;
+    background-position: center;
+}
+
+.ho-carrosel-img1 {
+    background-image: url("../../assets/image/pc_home_carrosel1.webp");
+}
+
+.ho-carrosel-img2 {
+    background-image: url("../../assets/image/pc_home_carrosel2.webp");
+}
+
+.ho-carrosel-img3 {
+    background-image: url("../../assets/image/pc_home_carrosel3.webp");
+}
+
+.ho-carrosel-img4 {
+    background-image: url("../../assets/image/pc_home_carrosel4.webp");
+}
+
+/* Animação do carrossel de cima (voltando ao original com margin-left) */
+.ho-carrosel:not(.feat) #radio1:checked~.ho-slides {
+    margin-left: 0;
+}
+
+.ho-carrosel:not(.feat) #radio2:checked~.ho-slides {
+    margin-left: -100%;
+}
+
+.ho-carrosel:not(.feat) #radio3:checked~.ho-slides {
+    margin-left: -200%;
+}
+
+.ho-carrosel:not(.feat) #radio4:checked~.ho-slides {
+    margin-left: -300%;
+}
+
+
+/* --- CARROSSEL DE BAIXO (COLABORADORES) --- */
+.ho-carrosel.feat {
+    height: 250px;
+    background-color: var(--color-6);
+    display: none;
+}
+
+.ho-carrosel.feat .ho-slides {
+    width: 600%;
+    height: 100%;
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.ho-carrosel.feat .ho-slides>a {
+    flex-basis: calc(100% / 6);
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ho-carrosel.feat .ho-slides>a>div {
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border-radius: 50%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.ho-carroselfeat-img1 {
+    background-image: url("../../assets/image/pc_home_CNPQ.webp");
+}
+
+.ho-carroselfeat-img2 {
+    background-image: url("../../assets/image/pc_home_BRAZILDATACUBE.webp");
+}
+
+.ho-carroselfeat-img3 {
+    background-image: url("../../assets/image/pc_home_FAFESP.webp");
+}
+
+.ho-carroselfeat-img4 {
+    background-image: url("../../assets/image/pc_home_CONAB.webp");
+}
+
+.ho-carroselfeat-img5 {
+    background-image: url("../../assets/image/pc_home_CAPES.webp");
+}
+
+.ho-carroselfeat-img6 {
+    background-image: url("../../assets/image/pc_home_INPE.webp");
+}
+
+/* Animação do carrossel de baixo (com transform) */
+#radio1-2:checked~.ho-slides.feat {
+    transform: translateX(calc(-100% / 6 * 0));
+}
+
+#radio2-2:checked~.ho-slides.feat {
+    transform: translateX(calc(-100% / 6 * 1));
+}
+
+#radio3-2:checked~.ho-slides.feat {
+    transform: translateX(calc(-100% / 6 * 2));
+}
+
+#radio4-2:checked~.ho-slides.feat {
+    transform: translateX(calc(-100% / 6 * 3));
+}
+
+#radio5-2:checked~.ho-slides.feat {
+    transform: translateX(calc(-100% / 6 * 4));
+}
+
+#radio6-2:checked~.ho-slides.feat {
+    transform: translateX(calc(-100% / 6 * 5));
+}
+
+
+/* --- NAVEGAÇÃO FINAL (BOLINHAS) --- */
+.ho-manual-navigation {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 10;
+}
+
+.ho-manual-btn {
+    border: 3px solid white;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.5s;
+    margin: 0 5px;
+}
+
+.ho-manual-btn:hover {
+    background-color: white;
+}
+
+.ho-carrosel:not(.feat) #radio1:checked~.ho-manual-navigation label:nth-child(1),
+.ho-carrosel:not(.feat) #radio2:checked~.ho-manual-navigation label:nth-child(2),
+.ho-carrosel:not(.feat) #radio3:checked~.ho-manual-navigation label:nth-child(3),
+.ho-carrosel:not(.feat) #radio4:checked~.ho-manual-navigation label:nth-child(4) {
+    background-color: white;
+}
+
+/* Bolinhas do carrossel de baixo */
+.ho-carrosel.feat .ho-manual-btn {
+    border-color: black;
+}
+
+.ho-carrosel.feat .ho-manual-btn:hover {
+    background-color: black;
+}
+
+.ho-carrosel.feat #radio1-2:checked~.ho-manual-navigation label:nth-child(1),
+.ho-carrosel.feat #radio2-2:checked~.ho-manual-navigation label:nth-child(2),
+.ho-carrosel.feat #radio3-2:checked~.ho-manual-navigation label:nth-child(3),
+.ho-carrosel.feat #radio4-2:checked~.ho-manual-navigation label:nth-child(4),
+.ho-carrosel.feat #radio5-2:checked~.ho-manual-navigation label:nth-child(5),
+.ho-carrosel.feat #radio6-2:checked~.ho-manual-navigation label:nth-child(6) {
+    background-color: black;
+}
+
+
+/*  estilo do Bemvindo  */
+h1 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.ho-title{
+    margin: 20px;
+   
+}
+
+h4 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ho-materia-topicos {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Espaço entre os cartões */
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.ho-topico-item {
+    flex: 1; /* Distribui o espaço igualmente entre os 3 */
+    text-align: center;
+    padding: 20px;
+}
+
+.ho-topico-icone {
+    /* Contêiner para o ícone */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    height: 60px; /* Para garantir alinhamento */
+}
+
+/* Estilo para os ícones (se você usar DIVs como placeholder) */
+.ho-topico-icone > div {
+    /* Exemplo: Quadrado verde que representa o ícone */
+    width: 40px;
+    height: 40px;
+   background-color: var(--color-5); 
+    border-radius: 5px;
+ 
+}
+
+
+
+/* icones*/
+
+.icone-ciencia { 
+    mask: url("../../assets/image/ho-home-icone-ciencia.png") no-repeat center;
+    mask-size: contain;
+    -webkit-mask: url("../../assets/image/ho-home-icone-ciencia.png") no-repeat center;
+    -webkit-mask-size: contain;
+    background-color: var(--color-5); /* Cor do seu ícone */
+}
+
+.icone-metodologia { 
+    mask: url("../../assets/image/ho-home-icone-sustentavel.png") no-repeat center;
+    mask-size: contain;
+    -webkit-mask: url("../../assets/image/ho-home-icone-sustentavel.png") no-repeat center;
+    -webkit-mask-size: contain;
+    background-color: var(--color-5); /* Cor do seu ícone */
+}
+
+
+.icone-formacao { 
+    mask: url("../../assets/image/ho-home-icone-formacao.png") no-repeat center;
+    mask-size: contain;
+    -webkit-mask: url("../../assets/image/ho-home-icone-formacao.png") no-repeat center;
+    -webkit-mask-size: contain;
+    background-color: var(--color-5); /* Cor do seu ícone */
+}
+
+.ho-topico-titulo {
+    font-size: 1.1rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-5); /* Títulos em verde (como no seu exemplo) */
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.ho-topico-texto {
+    font-size: 0.95rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-3);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+
+
+/* fim do estilo do Bemvindo */
+
+
+
+/* Caixa principal */
+.ho-caixaazul {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding: 50px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Cada card */
+.ho-card {
+    position: relative;
+    width: 22%;
+    min-width: 250px;
+    height: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    color: rgb(240, 240, 240);
+    box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+/* Efeito de leve aumento no hover */
+.ho-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Camada de imagem */
+.ho-cxazul {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Imagem de fundo */
+.ho-cxazul > div[class^="ho-img-"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+    transition: opacity 0.5s ease-out;
+}
+
+/* Overlay com degradê preto translúcido */
+.ho-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: brightness(0.8);
+    mask-image: linear-gradient(to top, black 70%, transparent 100%);
+    transition: transform 0.6s ease, opacity 0.4s ease;
+    transform: translateY(0);
+    z-index: 1;
+    height: 200%;
+}
+
+/* Hover: escurece mais o fundo e aumenta o contraste do degradê */
+.ho-card:hover::before {
+    transform: translateY(-15px);
+    opacity: 0.8;
+    
+   
+}
+
+
+/* Título */
+.ho-titulo-cards {
+    position: absolute;
+    inset: auto auto 30px 30px;
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+    transition: inset 0.3s 0.5s ease-out;
+    z-index: 2;
+}
+
+/* Título sobe quando hover */
+.ho-card:hover .ho-titulo-cards {
+    inset: auto auto 220px 30px;
+    transition: inset 0.3s ease-out;
+}
+
+/* Texto da descrição */
+.ho-txt-cxazul {
+    position: absolute;
+    inset: auto auto 80px 30px;
+    opacity: 0;
+    max-width: 80%;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgb(240, 240, 240);
+    transition: opacity 0.3s 0.1s ease-in;
+    text-align: left;
+    z-index: 2;
+}
+
+/* Mostra texto ao passar o mouse */
+.ho-card:hover .ho-txt-cxazul {
+    opacity: 1;
+}
+
+/* Imagens individuais */
+.ho-img-membros {
+    background-image: url("../../assets/image/pc_home_equipe.webp");
+}
+.ho-img-projetos {
+    background-image: url("../../assets/image/pc_home_projeto.webp");
+}
+.ho-img-sobre {
+    background-image: url("../../assets/image/pc_home_sobre.webp");
+}
+.ho-img-publicacoes {
+    background-image: url("../../assets/image/pc_home_publicacoes.webp");
+}
+
+.ho-cxnoticia {
+    background-color: whitesmoke;
+    margin: 50px auto; /* Centraliza e adiciona margem acima/abaixo */
+    padding: 60px;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    color: #2F4F4F;
+    
+}
+
+/* Container principal com duas colunas */
+.ho-noticias-container {
+    display: flex;
+    gap: 40px; /* Espaço entre as duas colunas */
+    align-items: flex-start;
+    max-width: 1200px;
+}
+
+/* COLUNA PRINCIPAL (ESQUERDA) */
+.ho-noticias-principal {
+    flex: 0 0 35%; /* Largura fixa para a coluna principal 35%) */
+    background-color: var(--color-4); /* Cor de fundo para garantir espaço */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ho-img-principal {
+    width: 100%;
+    /* Ajuste a altura para o visual vertical grande */
+    height: 700px; 
+    background-image: url("../../assets/image/ho-home-noticias.jpg"); /* <--- Imagem Principal */
+    background-size: cover;
+    background-position: center;
+}
+
+
+#ho-titulo-cards{
+font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    font-size: 50px;
+
+}
+
+/* COLUNA DE LISTA (DIREITA) */
+.ho-noticias-lista {
+    flex-grow: 1; /* Ocupa o restante do espaço */
+
+}
+
+.ho-noticias-lista h2 {
+    font-size: 2.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--color-3);
+    margin-bottom: 40px;
+    line-height: 1.1;
+}
+
+/* Item individual de notícia */
+.ho-noticia-item {
+    display: flex;
+    align-items: flex-start;
+    text-decoration: none;
+    color: var(--color-3);
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--color-4); /* Linha divisória */
+    transition: background-color 0.3s;
+}
+
+.ho-noticia-item:last-child {
+    border-bottom: none; /* Remove a linha do último item */
+}
+
+.ho-noticia-item:hover {
+    color: var(--color-5);
+}
+
+/* Imagem da notícia na lista */
+.ho-noticia-thumb {
+    width: 200px;
+    height: 100px;
+    margin-right: 20px;
+    background-size: cover; /* <-- Esta linha sugere que é background, não tag <img> */
+    background-position: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+}
+.ho-noticia-thumb-container {
+    flex-shrink: 0;
+    width: 200px;
+    height: 100px;
+    margin-right: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+
+/* Conteúdo da notícia */
+.ho-noticia-conteudo {
+    flex-grow: 1;
+}
+
+.ho-noticia-titulo {
+    font-size: 1.2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.ho-noticia-resumo {
+    font-size: 0.9rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #555;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.ho-noticia-mais {
+    font-size: 0.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: var(--color-6); /* Cor de link mais clara */
+    text-transform: uppercase;
+}
+
+
+
+
+
+#faixaazul {
+    color: var(--color-2);
+    background-color: var(--color-6);
+    padding: 10px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.ho-faixaazul {
+    background-color: rgb(207, 219, 207);
+    justify-content: space-evenly;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+#ho-faixaazulmbl {
+    background-color: var(--color-6);
+    display: none;
+    justify-content: center;
+    width: 100%;
+}
+
+
+
+@media (max-width: 1400px) {
+    /* Container dos Cards */
+    .ho-faixaazul {
+        max-width: 90%; /* Ocupa mais largura na tela */
+        padding: 30px 30px; /* Reduz o padding */
+        gap: 20px; /* Reduz o espaçamento */
+        
+    }
+
+    /* Card Individual: 2 por linha */
+    .ho-card {
+        width: 47%; /* Garante que 2 cards caibam (2 * 47% = 94% + gap) */
+        min-width: 320px; /* Aumenta a largura mínima para dar mais destaque */
+        height: 380px;
+    }
+
+    /* Título principal da seção */
+    #ho-titulo-cards {
+        font-size: 2.5rem;
+    }
+
+    /* Título DENTRO dos cards (Ajuste para 2 cards) */
+    .ho-card:hover .ho-titulo-cards {
+        inset: auto auto 150px 30px; /* Sobe um pouco menos */
+    }
+}
+
+/* ========================================================= */
+/* === PONTO DE QUEBRA: 1 CARD POR LINHA (até 900px) === */
+/* ========================================================= */
+@media (max-width: 900px) {
+
+    /* --- GERAL: Tópicos e Notícias em Coluna --- */
+    .ho-materia-topicos,
+    .ho-noticias-container {
+        flex-direction: column;
+    }
+    
+    /* --- CARDS: 1 por linha (Coluna) --- */
+    .ho-caixaazul {
+        flex-direction: column; /* Coloca os cards em coluna */
+        align-items: center;
+        padding: 20px 0;
+        gap: 25px;
+        max-width: 100%;
+    }
+
+    /* Card Individual: 1 por linha */
+    .ho-card {
+        width: 90%; /* Ocupa a maior parte da tela */
+        max-width: 450px; /* Limita a largura máxima para tablets */
+        min-width: unset; /* Remove o min-width para permitir flexibilidade */
+        height: 350px;
+    }
+
+    /* Título DENTRO dos cards (Ajuste para 1 card) */
+    .ho-titulo-cards {
+        font-size: 1.3rem;
+        inset: auto auto 20px 20px;
+    }
+
+    .ho-card:hover .ho-titulo-cards {
+        inset: auto auto 120px 20px;
+    }
+
+    .ho-txt-cxazul {
+        font-size: 0.9rem;
+        inset: auto auto 50px 20px;
+    }
+}
+
+/* ========================================================= */
+/* === PONTO DE QUEBRA: CELULARES (até 600px) === */
+/* ========================================================= */
+@media (max-width: 600px) {
+    /* Ajustes finos para telas menores */
+    .ho-card {
+        height: 300px;
+    }
+    #ho-titulo-cards {
+        font-size: 2rem;
+    }
+}
+
+/* ========================================================= */
+/* === PONTO DE QUEBRA: TELAS MÉDIAS (até 900px) === */
+/* ========================================================= */
+@media (max-width: 900px) {
+
+    /* --- RESPONSIVIDADE GERAL DE LAYOUT --- */
+
+    /* Desativa as faixas fixas, se houver */
+    #faixaazul {
+        display: none;
+    }
+
+    /* Colunas de conteúdo (se houver a classe .ho-materia) */
+    .ho-materia {
+        flex-direction: column;
+    }
+    .ho-txtomateria,
+    .ho-imgmateria {
+        width: 100%;
+        padding: 0px;
+        margin-bottom: 20px;
+    }
+
+    /* Menu mobile (A faixa azul .ho-faixaazulmbl é exibida) */
+    #ho-faixaazulmbl {
+        color: var(--color-2);
+        display: flex;
+        margin-bottom: -2px;
+    }
+
+    /* Carrossel principal (Ajusta a altura) */
+    .ho-carrosel:not(.feat) {
+        height: 500px; /* Redução de altura para telas médias */
+    }
+
+    /* --- TÓPICOS (.ho-materia-topicos) --- */
+    .ho-materia-topicos {
+        flex-direction: column; /* Tópicos em coluna */
+        gap: 30px;
+        margin: 40px auto;
+    }
+    .ho-topico-item {
+        padding: 0 10px;
+    }
+    .ho-topico-texto {
+        text-align: center;
+    }
+
+    /* --- CARDS (Seção "Conheça nosso portal") --- */
+
+    /* Container principal da seção de cards */
+    .ho-faixaazul {
+        display: block;
+        padding: 40px 20px;
+        margin: 20px auto;
+        /* As linhas 'display: none' anteriores foram removidas */
+    }
+
+    /* Título principal da seção */
+    #ho-titulo-cards {
+        display: block;
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 30px;
+        color: var(--color-5);
+    }
+
+    /* Container dos cards */
+    .ho-caixaazul {
+        flex-direction: column; /* Cards em coluna */
+        padding: 0;
+        align-items: center;
+        gap: 25px;
+    }
+
+    /* Card individual */
+    .ho-card {
+        width: 95%;
+        max-width: 400px;
+        height: 350px;
+        margin-bottom: 0;
+    }
+
+    /* Título DENTRO dos cards */
+    .ho-titulo-cards {
+        font-size: 1.3rem;
+        inset: auto auto 20px 20px;
+    }
+    .ho-card:hover .ho-titulo-cards {
+        inset: auto auto 120px 20px;
+    }
+
+    /* Texto de descrição DENTRO dos cards */
+    .ho-txt-cxazul {
+        font-size: 0.9rem;
+        inset: auto auto 50px 20px;
+    }
+
+    /* --- NOTÍCIAS --- */
+    .ho-noticias-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .ho-noticias-principal {
+        flex: auto;
+        width: 100%;
+    }
+    .ho-img-principal {
+        height: 400px;
+    }
+    .ho-noticias-lista h2 {
+        font-size: 2rem;
+        margin-top: 0;
+    }
+    .ho-noticia-item {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+    .ho-noticia-thumb {
+        flex: 0 0 120px;
+        height: 80px;
+    }
+
+    /* Regras de legado que não parecem ser usadas no HTML atual */
+    .ho-imgtitulo {
+        width: 80%;
+        height: 550px;
+    }
+    .ho-imgtitulo h3 {
+        font-size: 40px;
+    }
+    .ho-cxazul { /* Altura aqui está duplicada com a de baixo, mas mantida por segurança */
+        height: 500px;
+    }
+    .ho-txt-cxazul { /* Duplicada e sobrescrita pela regra acima, mas mantida por segurança */
+        font-size: 25px;
+    }
+    #ho-titulo-cards { /* Duplicada e sobrescrita pela regra acima, mas mantida por segurança */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+    }
+    .ho-carrosel.feat {
+        display: block;
+        background-color: var(--color-6);
+    }
+}
+
+/* ========================================================= */
+/* === PONTO DE QUEBRA: TELAS PEQUENAS (até 700px) === */
+/* ========================================================= */
+@media (max-width: 700px) {
+    /* Regras para ajuste de tamanho/padding */
+    .ho-txt-cxazul {
+        font-size: 20px;
+    }
+    .ho-cxazul {
+        height: 400px;
+    }
+    .ho-imgtitulo {
+        height: 425px;
+    }
+    .ho-carrosel:not(.feat) {
+        height: 500px; /* Duplicada, mantida por segurança */
+    }
+}
+
+/* ========================================================= */
+/* === PONTO DE QUEBRA: CELULARES (até 600px, era 480px) === */
+/* ========================================================= */
+@media (max-width: 600px) {
+    /* Ajustes finos para o tamanho dos cards no celular */
+    .ho-card {
+        width: 100%;
+        max-width: none;
+        height: 300px;
+    }
+    .ho-faixaazul {
+        justify-content: center;
+        align-content: center;
+        margin: 0px;
+        padding: 40px 10px 0px 10px; /* Reduz o padding horizontal */
+    }
+    #ho-titulo-cards {
+        font-size: 2rem;
+    }
+    .ho-titulo-cards {
+        font-size: 1.1rem;
+    }
+}

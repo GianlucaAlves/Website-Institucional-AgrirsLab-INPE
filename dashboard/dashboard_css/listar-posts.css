@@ -1,0 +1,87 @@
+
+
+      h1 {
+          text-align: center;
+          margin-bottom: 20px;
+      }
+
+      .filter-container {
+          margin-bottom: 15px;
+          text-align: center;
+      }
+
+      select {
+          padding: 5px 10px;
+          font-size: 16px;
+      }
+
+      table {
+          width: 100%;
+          border-collapse: collapse;
+          background-color: #fff;
+          margin-bottom: 40px;
+      }
+
+      th,
+      td {
+          padding: 10px;
+          border: 1px solid #ddd;
+          text-align: left;
+      }
+
+      th {
+          background-color: #333;
+          color: #fff;
+      }
+
+      .actions button {
+          margin-right: 5px;
+          padding: 5px 10px;
+          border: none;
+          cursor: pointer;
+          border-radius: 4px;
+          color: #fff;
+      }
+
+      .actions .edit {
+          background-color: #4caf50;
+      }
+
+      .actions .delete {
+          background-color: #f44336;
+      }
+
+      .actions button:hover {
+          opacity: 0.9;
+      }
+
+      tbody tr:nth-child(even) {
+          background-color: #f9f9f9;
+      }
+
+  .modal {
+   display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-height: 80vh;    /* Limita a altura máxima do modal à 80% da tela */
+  overflow-y: auto;    /* Scroll só no conteúdo */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="../dashboard_css/dashboard.css">
+  <link rel="stylesheet" href="../../src/styles/global.css">
+  <link rel="icon" type="image/x-icon" href="../../src/assets/image/Logo.svg">
+</head>
+
+
+
+<body>
+ 
+  <header>
+            <div class="content-header">
+                <a href="dashboard.html"><div class="logo"></div></a>
+                <div class="options">
+                    <div class="selected-box">
+                        <a href="./dashboard.html"><b>Dashboard</b></a>
+                        <div class="center">
+                            <hr>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="box">
+                        <a href="./posts.html"><b>Criar conteúdo</b></a>
+                        <div class="center">
+                            <hr>
+                        </div>
+                        
+                    </div>
+                <hr>
+                    <div class="box">
+                        <a href="./listar-posts.html"><b>Listar conteudos</b></a>
+                        <div class="center">
+                            <hr>
+                        </div>
+                    </div>
+                    
+                    <div class="admin-only">
+                        <hr>
+                    </div>
+                    <div class="box admin-only">
+                        
+                        <a href="./criar-membros.html"><b>Cadastrar membros</b></a>
+                        <div class="center">
+                            <hr>
+                        </div>
+                        
+                    </div>
+
+                    <div class="admin-only">
+                        <hr>
+                    </div>
+                    <div class="box admin-only">
+                        
+                        <a href="./listar-membros.html"><b>Listar membros</b></a>
+                        <div class="center">
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+        <div class="responsive-menu">
+            <div class="logo"></div>
+            <div class="space"></div>
+            <!-- Checkbox invisível para controlar o menu -->
+            <input type="checkbox" id="menu-toggle">
+
+            <!-- Ícone hambúrguer -->
+            <label for="menu-toggle" class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+            <!-- Menu Dropdown -->
+            <nav class="menu">
+                
+                <ul>
+                    <li><a href="./dashboard.html">Dashboard</a></li>
+                    <hr>
+
+                    <li class="dropdown">
+                        <input type="checkbox" id="AgriRSLab-menu" class="dropdown-toggle">
+                        <label for="AgriRSLab-menu" class="menu-AgriRSLab">AgriRSLab <div class="icon-arrow"><img src="../../../src/assets/svg/caret-down-solid-full.svg" alt=""></div></label>
+
+                        <div class="mbl-dropdown-content">
+                            <a href="./posts.html">Criar conteudos</a>
+                            <a href="./listar-posts.html">Listar conteudos</a>
+                            <a href="./criar-membros.html" class="admin-only">Cadastrar membros</a>
+                            <a href="./listar-membros.html" class="admin-only">Listar membros</a>
+                        </div>
+                    </li>
+
+                    <hr>
+                    <li><a href="vagas.html">Vagas</a></li>
+                   
+                    
+                </ul>
+            </nav>
+        </div>
+
+  <main>
+    <div class="pc">
+        <section class="welcome">
+        <svg width="50" height="50" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- Outer circle for the user icon -->
+            <circle cx="50" cy="50" r="45" fill="white" stroke="#245C4D" stroke-width="4"/>
+            <!-- Inner circle for the head -->
+            <circle cx="50" cy="35" r="15" fill="#245C4D"/>
+            <!-- Arc for the body -->
+            <path d="M 25 75 A 25 25 0 0 1 75 75" fill="#245C4D"/>
+          </svg>
+      <h1>Bem vindo(a), <span id="user-name"></span>!</h1>
+      <p>O que deseja fazer hoje?</p>
+
+
+    </section>
+   
+    <section class="cards">          
+
+        <a href="./posts.html" class="ho-card">
+            <h3 class="ho-titulo-cards">Criar <br>conteúdo</h3>
+            <div class="ho-cxazul">
+                <div class="ho-img-membros"></div>
+                <p class="ho-txt-cxazul">Crie vagas, noticias, projetos ou publicações. Deixe nosso portal repleto de conteúdo!</p>
+            </div>
+        </a>
+
+        <a href="./listar-posts.html" class="ho-card">
+            <h3 class="ho-titulo-cards">Listar conteudos</h3>
+            <div class="ho-cxazul">
+                <div class="ho-img-projetos"></div>
+                <p class="ho-txt-cxazul">Visualize, altere ou exclua os conteúdos do nosso portal AgriRSLab por aqui!</p>
+            </div>
+        </a>
+
+        <a href="./criar-membros.html" class="ho-card admin-only">
+            <h3 class="ho-titulo-cards">Cadastrar membros</h3>
+            <div class="ho-cxazul">
+                <div class="ho-img-sobre"></div>
+                <p class="ho-txt-cxazul">Membro novo na nossa equipe? Sem problemas! Cadastre-o por aqui!</p>
+            </div>
+        </a>
+
+        <a href="./listar-membros.html" class="ho-card admin-only">
+            <h3 class="ho-titulo-cards">Listar <br>membros</h3>
+            <div class="ho-cxazul">
+                <div class="ho-img-publicacoes"></div>
+                <p class="ho-txt-cxazul">Administre cadastros, altere dados e visualize todos os nossos colaboradores.</p>
+            </div>
+        </a>
+
+        <a href="./editar-membro.html" class="ho-card editar-membro">
+            <h3 class="ho-titulo-cards">Configurações de usuário</h3>
+            <div class="ho-cxazul">
+                <div class="ho-img-edit"></div>
+                <p class="ho-txt-cxazul">Por aqui você pode editar as informações do seu perfil, trocar sua senha, adicionar ou trocar sua foto que será exibida na página de "Membros" e fazer logout.</p>
+            </div>
+        </a>
+
+    </section>
+    </div>
+    
+  </main>
+
+
+   <footer>
+        <div class="footer">
+            <div class="footer-title"><a href=""></a><b>AgriRSLab</b></div>
+            <div class="footer-options">
+
+                 <b><a href="dashboard.html">Dashboard</a></b>
+                    <b><a href="posts.html">Criar conteúdo</a></b>
+                    <b><a href="listar-posts.html">Lista de conteúdos</a></b>
+                    <b class="admin-only"><a href="criar-membros.html">Cadastrar membros</a></b>
+                    <b class="admin-only"><a href="listar-membros.html" >Lista de membros</a></b>
+
+
+
+            </div>
+            <hr>
+            <div class="infos">
+                <div class="dev-team">
+                    <p>©2025 Nighthawks. All rights reserved.</p>
+                </div>
+                <div class="social-midia">
+                    <a href=""><img src="../../src/assets/image/linkedin.png" alt=""></a>
+                    <a href=""><img src="../../src/assets/image/instagram.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+        <div class="responsive-footer">
+
+            <div class="infos">
+                <div class="footer-title"><a href="#"></a><b>AgriRSLab</b></div>
+                <hr>
+                <div class="footer-bottom">
+                    <div class="dev-team">
+                        <p>©2025 Nighthawks. <br> All rights reserved.</p>
+                    </div>
+                </div>
+                <div class="responsive-social">
+                    <div class="social-midia">
+                        <a href="#" class="linkedin2"><img src="../../src/assets/image/linkedin.png" alt=""></a>
+                        <a href="#" class="instagram2"><img src="../../src/assets/image/instagram.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+
+            </label>
+        </div>
+            <script src="../dashboard_js/dashboard.js"></script>
+            <script src="../dashboard_js/script.js"></script>
+            <script src="../dashboard_js/editar-membro.js"></script>
+</body>
+</html>

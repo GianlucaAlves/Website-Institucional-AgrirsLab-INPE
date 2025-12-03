@@ -1,0 +1,732 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  --font: "PT Sans", sans-serif;
+}
+
+:root {
+  --color-1: #2F4F4F;
+  --color-2: #ffffff;
+  --color-3: #000000;
+  --color-4: #efecec;
+  --color-5: #245C4D;
+  --color-6: #0574BB;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 6. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  text-align: justify;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+    10. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+main {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 30px;
+  flex: 1;
+}
+
+header {
+  padding-top: 10px;
+  width: 100%;
+}
+
+.content-header {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  margin-left: 15%;
+}
+
+.options {
+  flex: 9;
+  display: flex;
+  justify-content: space-around;
+}
+
+.logo { 
+  flex: 1;
+  height: 70px;
+  background-image: url(../assets/image/Logo.svg);
+  background-size: 56%;         /* valor numérico (não use 'contain') */
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-size .6s cubic-bezier(.22,.9,.35,1);
+}
+
+.logo:hover {
+  background-size: 60%;
+}
+
+
+.box {
+  flex: 1;
+  height: 100%;
+}
+
+header a {
+  flex: 1;
+  text-decoration: none;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.selected-box {
+  flex: 1;
+  height: 100%;
+}
+
+.selected-box a {
+  background-color: var(--color-1);
+  color: var(--color-2);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.box a {
+  background-color: var(--color-2);
+  color: var(--color-3);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.content-header hr {
+  height: 50px;
+  width: 2px;
+  border: none;
+  background-color: var(--color-1);
+  margin-top: 12px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+.center hr {
+  margin-top: 10px;
+  width: 90px;
+  height: 2px;
+}
+
+.box .center hr {
+  margin-top: 10px;
+  width: 90px;
+  height: 2px;
+  background-color: var(--color-5);
+  border: none;
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: left; /* começa da esquerda */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.box:hover .center hr {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.footer {
+  background-color: var(--color-1);
+  position: relative;
+  bottom: 0%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Footer básico */
+footer {
+  background-color: var(--color-1);
+  padding: 0px;
+  text-align: center;
+  color: var(--color-2);
+}
+
+.dev-team {
+  text-align: left;
+}
+
+.infos {
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.social-midia {
+  display: flex;
+  justify-content: space-between;
+  width: 5%;
+}
+
+.footer hr {
+  width: 80%;
+}
+
+.footer-options a {
+  position: relative;
+  text-decoration: none;
+  color: var(--color-2);
+  transition: color 0.3s ease; /* transição de cor opcional */
+}
+
+/* Cria a "linha" falsa abaixo do texto */
+.footer-options a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px; /* ajusta conforme o tamanho da fonte */
+  width: 0;
+  height: 1.5px; /* espessura da linha */
+  background-color: var(--color-2);
+  transition: width 0.3s ease; /* animação suave da largura */
+}
+
+/* Quando o mouse passa, a linha cresce */
+.footer-options a:hover::after {
+  width: 100%;
+}
+
+.footer-options {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin-bottom: 8px;
+  margin-top: 5px;
+}
+
+.footer-options b{
+  margin-right: 8px;
+}
+
+.footer-title {
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+.dropdown-content {
+  opacity: 0;
+  pointer-events: none;
+  display: flex;
+  position: absolute;
+  background-color: var(--color-4);
+  width: 220px;
+  text-align: left;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  z-index: 3;
+  transition: opacity 0.3s ease, visibility 0s 0.3s;
+  margin-top: -12px;
+  flex-direction: column;
+  justify-content: left;
+  align-items: start;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.box:hover .dropdown-content {
+  pointer-events: auto; 
+  margin-top: -12px;
+  opacity: 1;
+  transition: opacity 0.3s ease, visibility 0s 0s;
+}
+
+.selected-box:hover .dropdown-content {
+  pointer-events: auto; 
+  opacity: 1;
+  margin-top: -12px;
+  transition: opacity 0.3s ease, visibility 0s 0s;
+}
+
+.dropdown-content a {
+  background-color: var(--color-4);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: var(--color-3);
+  box-shadow: 0 0 0 0 ;
+}
+
+.box a:hover {
+  background-color: var(--color-5);
+  color: var(--color-2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+
+}
+
+.dropdown-content a:hover {
+  background-color: var(--color-4);
+  color: var(--color-3);
+  box-shadow: 0 0 0 0 ;
+}
+
+
+.responsive-menu {
+  display: none;
+}
+
+.responsive-footer {
+  display: none;
+}
+
+.sw-switch {
+  position: absolute;
+  width: 90px;
+  height: 20px;
+  top: 10px;
+  margin-left: 87%;
+}
+
+.sw-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.sw-slider {
+  width: 90px;
+  height: 20px;
+  background-color: var(--color-1);
+  border-radius: 50px;
+  transition: background-color 0.4s;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  text-transform: uppercase;
+  position: relative;
+  /* ← IMPORTANTE */
+}
+
+.sw-text-left {
+  opacity: 0;
+}
+
+.sw-text-left,
+.sw-text-right {
+  color: var(--color-2);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.sw-circle {
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: -5px;
+  left: 2px;
+  border-radius: 50%;
+  background-image: url('https://flagcdn.com/w40/br.png');
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 5px #0005;
+  transition: transform 0.4s, background-image 0.4s;
+  z-index: 2;
+}
+
+input:checked+.sw-slider .sw-circle {
+  transform: translateX(56px);
+  background-image: url('https://flagcdn.com/w40/us.png');
+}
+
+.sw-text-right {
+  position: absolute;
+  right: 10px;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.sw-text-left {
+  transition: opacity 0.3s;
+}
+
+input:checked+.sw-slider .sw-text-left {
+  opacity: 1;
+}
+
+input:checked+.sw-slider .sw-text-right {
+  opacity: 0;
+}
+
+@media (max-width: 1650px) {
+  .footer-options {
+    width: 45%;
+  }
+}
+
+@media (max-width: 1430px) {
+  .footer-options {
+    width: 80%;
+  }
+}
+
+@media (max-width: 900px) {
+  .sw-switch {
+    width: 80%;
+    height: 20px;
+    top: 30px;
+    margin-left: 0%;
+    justify-content: center;
+    display: flex;
+  }
+
+  .sw-text-left,
+  .sw-text-right {
+    color: var(--color-3);
+  }
+
+  .sw-slider {
+    background-color: var(--color-2);
+  }
+
+  header {
+    display: none;
+  }
+
+  .responsive-menu {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+
+  .menu-icon {
+    transition: transform 0.3s ease;
+    flex: 1;
+    max-width: 30px;
+    height: 25px;
+    position: relative;
+    margin: 20px 20px 0 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 4;
+  }
+
+  .menu-icon span {
+    transition: transform 0.3s ease;
+    height: 4px;
+    background-color: var(--color-1);
+    border-radius: 2px;
+  }
+
+  .menu {
+    position: absolute;
+    width: 100%;
+    background-color: var(--color-5);
+    z-index: 3;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+  }
+
+  #menu-toggle:checked~.menu {
+    max-height: 700px;
+    padding-bottom: 20px;
+  }
+
+  #menu-toggle:checked~.menu-icon span {
+    background-color: var(--color-2);
+    opacity: 0;
+
+  }
+
+  #menu-toggle:checked~.menu-icon {
+    transition: transform 0.3s ease;
+    background-image: url(../assets/svg/xmark-solid-full.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+
+
+  .mbl-dropdown-content {
+    display: none;
+    flex-direction: column;
+  }
+
+  #AgriRSLab-menu:checked~.mbl-dropdown-content {
+    display: flex;
+  }
+
+  .menu-AgriRSLab .icon-arrow {
+    transition: transform 0.3s ease;
+    display: inline-block;
+  }
+
+  #AgriRSLab-menu:checked+label .icon-arrow {
+    transform: rotate(180deg);
+  }
+
+  #Publicacoes-menu:checked+label .icon-arrow {
+    transform: rotate(180deg);
+  }
+
+
+
+
+  #AgriRSLab-menu {
+    display: none;
+  }
+
+  #Publicacoes-menu:checked~.mbl-dropdown-content {
+    display: flex;
+  }
+
+
+  #Publicacoes-menu {
+    display: none;
+  }
+
+  .menu-AgriRSLab {
+    color: var(--color-2);
+    font-size: 20px;
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+  }
+
+  .menu ul {
+    margin-left: 10%;
+    width: 80%;
+    padding-top: 70px;
+    list-style: none;
+    text-align: left;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+  }
+
+  .menu ul li {
+    margin: 15px 0 0 10%;
+  }
+
+  .menu ul li a {
+    color: var(--color-2);
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s;
+  }
+
+  .menu hr {
+    width: 90%;
+    margin-left: 5%;
+  }
+
+  .mbl-dropdown-content {
+    display: none;
+    background-color: var(--color-5);
+    z-index: 3;
+    width: 220px;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+
+  .space {
+    flex: 10;
+  }
+
+  .logo {
+    flex: 3;
+    width: 70px;
+    height: 70px;
+    background-image: url(../assets/image/Logo.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 4;
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+
+  .icon-arrow {
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .icon-arrow {
+    transition: transform 0.3s ease;
+  }
+
+
+
+
+  footer {
+    display: none;
+  }
+
+  .responsive-footer {
+    display: flex;
+  }
+
+  .responsive-footer .infos {
+    background-color: var(--color-1);
+    color: #ffffff;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    margin-bottom: 0px;
+  }
+
+
+  .footer-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 100%;
+  }
+
+  hr {
+    width: 80%;
+    border: 1px solid var(--color-2);
+  }
+
+  .footer-bottom {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0 auto
+  }
+
+  .social-midia {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: auto;
+    position: relative;
+    top: -30px;
+  }
+
+  .responsive-social {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-right: 80px;
+
+  }
+
+  .infos .dev-team {
+    margin-left: 5%;
+    margin-top: 20px;
+  }
+
+  .dev-team br {
+    display: none;
+  }
+
+}
+
+@media (max-width: 500px) {
+  .dev-team br {
+    display: flex;
+  }
+}
+
+@media (max-width: 300px) {
+  .space {
+    flex: 4;
+  }
+}
