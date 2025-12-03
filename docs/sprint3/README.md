@@ -13,7 +13,7 @@
 
 > Status da Sprint: Finalizado ✅ 
 >
-> [Sprint 3 no YouTube] 📽️
+> [Sprint 3 no YouTube](https://www.youtube.com/watch?v=5xIeT06M3OU) 📽️
 
 ##  Burndown Chart 📉🔥 <a id="burndown"></a>
 
