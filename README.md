@@ -29,8 +29,10 @@
 >
 >[Pasta de Documentação](./docs) 📄
 > 
-> [Vídeo do Projeto no YouTube](https://www.youtube.com/watch?v=bLmCPFcv2Is) 📽️
->
+> [1- Vídeo do Projeto no YouTube](https://www.youtube.com/watch?v=bLmCPFcv2Is) 📽️
+> [2- Vídeo do Projeto no YouTube](https://www.youtube.com/watch?v=tCPADslzZis)📽️
+> [3- Vídeo do Projeto no YouTube](https://www.youtube.com/watch?v=5xIeT06M3OU)📽️
+
 
 ##  Desafio <a id="desafio"></a>
 
@@ -195,7 +197,7 @@ A tabela abaixo relaciona cada requisito funcional e não funcional com sua resp
 ---
 
 ## 💻 Tecnologias <a id="tecnologias"></a>
---- **EM ANDAMENTO (Sujeito a alterações)** ---
+
 <h4 align="center">
 <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML"><img src="https://img.shields.io/badge/CSS-2965F1?style=for-the-badge&logo=css3&logoColor=white" alt="CSS Badge"></a>
 <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML"><img src="https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML Badge"></a>
