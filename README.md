@@ -29,9 +29,9 @@
 >
 >[Pasta de Documentação](./docs) 📄
 > 
-> <p>[1- Vídeo do Projeto no YouTube](https://www.youtube.com/watch?v=bLmCPFcv2Is) 📽️</p>
-> <p>[2- Vídeo do Projeto no YouTube](https://www.youtube.com/watch?v=tCPADslzZis)📽️</p>
-><p>[3- Vídeo do Projeto no YouTube](https://www.youtube.com/watch?v=5xIeT06M3OU)📽️</p> 
+> [1- Vídeo do Projeto no YouTube](https://www.youtube.com/watch?v=bLmCPFcv2Is) 📽️
+> [2- Vídeo do Projeto no YouTube](https://www.youtube.com/watch?v=tCPADslzZis)📽️
+> [3- Vídeo do Projeto no YouTube](https://www.youtube.com/watch?v=5xIeT06M3OU)📽️
 
 
 ##  Desafio <a id="desafio"></a>
