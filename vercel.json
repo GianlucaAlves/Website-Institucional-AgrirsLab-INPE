@@ -13,7 +13,7 @@
       "dest": "/api/index.js"
     },
     {
-      "src": "/dashboard/(.*)",
+      "src": "/dashboard/api/(.*)",
       "dest": "/api/index.js"
     },
     {
@@ -26,26 +26,39 @@
     },
     {
       "src": "/enviar",
-      "dest": "/api/index.js"
+      "dest": "/api/index.js",
+      "methods": ["POST"]
     },
     {
       "src": "/uploads/(.*)",
       "dest": "/api/index.js"
     },
     {
-      "src": "/dashboard/(.*)\\.html",
+      "src": "/dashboard/(.*)\\.html$",
       "dest": "/dashboard/$1.html"
     },
     {
-      "src": "/dashboard/login.html",
+      "src": "/dashboard/dashboard_html/(.*)\\.html$",
+      "dest": "/dashboard/dashboard_html/$1.html"
+    },
+    {
+      "src": "/dashboard/login\\.html$",
       "dest": "/dashboard/login.html"
     },
     {
-      "src": "/pages/(.*)\\.html",
+      "src": "/dashboard/dashboard_css/(.*)",
+      "dest": "/dashboard/dashboard_css/$1"
+    },
+    {
+      "src": "/dashboard/dashboard_js/(.*)",
+      "dest": "/dashboard/dashboard_js/$1"
+    },
+    {
+      "src": "/pages/(.*)\\.html$",
       "dest": "/pages/$1.html"
     },
     {
-      "src": "/en-pages/(.*)\\.html",
+      "src": "/en-pages/(.*)\\.html$",
       "dest": "/en-pages/$1.html"
     },
     {
@@ -53,14 +66,8 @@
       "dest": "/src/$1"
     },
     {
-      "src": "/(.*)",
+      "src": "/$",
       "dest": "/pages/home.html"
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/",
-      "destination": "/pages/home.html"
     }
   ],
   "headers": [
