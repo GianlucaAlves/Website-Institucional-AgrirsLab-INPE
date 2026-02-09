@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const res = await fetch(`${window.API_BASE_URL}/posts/${id}`);
     const projeto = await res.json();
-    console.log("Projeto Individual] Dados recebidos:", projeto); // LOG B
+    console.log("[Projeto Individual] Dados recebidos:", projeto); // LOG B
 
     if (!projeto) {
       console.error("Projeto não encontrada no backend");
