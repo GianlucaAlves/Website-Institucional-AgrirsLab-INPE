@@ -5,6 +5,126 @@
     {
       "source": "/",
       "destination": "/pages/home.html"
+    },
+    {
+      "source": "/home",
+      "destination": "/pages/home.html"
+    },
+    {
+      "source": "/home.html",
+      "destination": "/pages/home.html"
+    },
+    {
+      "source": "/sobre",
+      "destination": "/pages/sobre.html"
+    },
+    {
+      "source": "/sobre.html",
+      "destination": "/pages/sobre.html"
+    },
+    {
+      "source": "/membros",
+      "destination": "/pages/membros.html"
+    },
+    {
+      "source": "/membros.html",
+      "destination": "/pages/membros.html"
+    },
+    {
+      "source": "/projetos",
+      "destination": "/pages/projetos.html"
+    },
+    {
+      "source": "/projetos.html",
+      "destination": "/pages/projetos.html"
+    },
+    {
+      "source": "/projetoindividual",
+      "destination": "/pages/projetoindividual.html"
+    },
+    {
+      "source": "/projetoindividual.html",
+      "destination": "/pages/projetoindividual.html"
+    },
+    {
+      "source": "/publicacoes",
+      "destination": "/pages/publicacoes.html"
+    },
+    {
+      "source": "/publicacoes.html",
+      "destination": "/pages/publicacoes.html"
+    },
+    {
+      "source": "/noticias",
+      "destination": "/pages/noticias.html"
+    },
+    {
+      "source": "/noticias.html",
+      "destination": "/pages/noticias.html"
+    },
+    {
+      "source": "/notindividual",
+      "destination": "/pages/notindividual.html"
+    },
+    {
+      "source": "/notindividual.html",
+      "destination": "/pages/notindividual.html"
+    },
+    {
+      "source": "/parceiros",
+      "destination": "/pages/parceiros.html"
+    },
+    {
+      "source": "/parceiros.html",
+      "destination": "/pages/parceiros.html"
+    },
+    {
+      "source": "/atuacao",
+      "destination": "/pages/atuacao.html"
+    },
+    {
+      "source": "/atuacao.html",
+      "destination": "/pages/atuacao.html"
+    },
+    {
+      "source": "/vagas",
+      "destination": "/pages/vagas.html"
+    },
+    {
+      "source": "/vagas.html",
+      "destination": "/pages/vagas.html"
+    },
+    {
+      "source": "/vaga-individual",
+      "destination": "/pages/vaga-individual.html"
+    },
+    {
+      "source": "/vaga-individual.html",
+      "destination": "/pages/vaga-individual.html"
+    },
+    {
+      "source": "/contato",
+      "destination": "/pages/contato.html"
+    },
+    {
+      "source": "/contato.html",
+      "destination": "/pages/contato.html"
+    },
+    {
+      "source": "/criacaopub",
+      "destination": "/pages/criacaopub.html"
+    },
+    {
+      "source": "/criacaopub.html",
+      "destination": "/pages/criacaopub.html"
+    },
+    {
+      "source": "/base",
+      "destination": "/pages/base.html"
+    },
+    {
+      "source": "/base.html",
+      "destination": "/pages/base.html"
     }
   ]
 }
