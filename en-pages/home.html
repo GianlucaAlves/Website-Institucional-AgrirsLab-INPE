@@ -9,12 +9,15 @@
     <link rel="stylesheet" type="text/css" href="../src/styles/layout/home.css">
     <link rel="stylesheet" href="../src/styles/components/title.css">
     <link rel="icon" type="image/x-icon" href="../src/assets/image/Logo.svg">
+    <script src="/src/scripts/api-config.js"></script>
 </head>
-   
+
 <body>
     <header>
         <div class="content-header">
-            <a href="home.html"><div class="logo"></div></a>
+            <a href="home.html">
+                <div class="logo"></div>
+            </a>
             <div class="options">
                 <div class="selected-box">
                     <a href="home.html"><b>Home</b></a>
@@ -162,109 +165,122 @@
         </div>
 
         <div class="ho-title">
-           <h1 id="title">Welcome to AgriRSLab</h1>
-           <p><h4>Agricultural Remote Sensing Laboratory - INPE</h4></p>
+            <h1 id="title">Welcome to AgriRSLab</h1>
+            <p>
+            <h4>Agricultural Remote Sensing Laboratory - INPE</h4>
+            </p>
         </div>
 
         <div class="ho-materia-topicos">
-       
-         <div class="ho-topico-item">
-           <div class="ho-topico-icone">
-                 <div class="icone-ciencia"></div>
-           </div>
-         <h3 class="ho-topico-titulo">SCIENCE & TECHNOLOGY</h3>
-           <p class="ho-topico-texto">We develop research focused on producing science and technology based on Remote Sensing and Geoinformatics, aiming to generate basic and applied knowledge for the agricultural sector.</p>
-          </div>
-            
-          <div class="ho-topico-item">
-            <div class="ho-topico-icone">
-           <div class="icone-metodologia"></div>
-          </div>
-           <h3 class="ho-topico-titulo">SUSTAINABLE ADVANCEMENT</h3>
-         <p class="ho-topico-texto">Our goal is to develop and improve methodologies that promote the sustainable advancement of Brazilian agriculture, increasing productivity and competitiveness.</p>
-         </div>
-            
-          <div class="ho-topico-item">
-          <div class="ho-topico-icone">
-          <div class="icone-formacao"></div>
+
+            <div class="ho-topico-item">
+                <div class="ho-topico-icone">
+                    <div class="icone-ciencia"></div>
+                </div>
+                <h3 class="ho-topico-titulo">SCIENCE & TECHNOLOGY</h3>
+                <p class="ho-topico-texto">We develop research focused on producing science and technology based on
+                    Remote Sensing and Geoinformatics, aiming to generate basic and applied knowledge for the
+                    agricultural sector.</p>
             </div>
-         <h3 class="ho-topico-titulo">QUALIFIED TRAINING</h3>
-            <p class="ho-topico-texto">We contribute to the training of highly qualified Masters and PhDs through the INPE Remote Sensing Graduate Program (PGSER).</p>
-          </div>
+
+            <div class="ho-topico-item">
+                <div class="ho-topico-icone">
+                    <div class="icone-metodologia"></div>
+                </div>
+                <h3 class="ho-topico-titulo">SUSTAINABLE ADVANCEMENT</h3>
+                <p class="ho-topico-texto">Our goal is to develop and improve methodologies that promote the sustainable
+                    advancement of Brazilian agriculture, increasing productivity and competitiveness.</p>
+            </div>
+
+            <div class="ho-topico-item">
+                <div class="ho-topico-icone">
+                    <div class="icone-formacao"></div>
+                </div>
+                <h3 class="ho-topico-titulo">QUALIFIED TRAINING</h3>
+                <p class="ho-topico-texto">We contribute to the training of highly qualified Masters and PhDs through
+                    the INPE Remote Sensing Graduate Program (PGSER).</p>
+            </div>
         </div>
 
         <div class="ho-faixaazul">
             <h1 id="ho-titulo-cards">Explore our portal</h1>
-        <div class="ho-caixaazul">
-            
-            <a href="membros.html" class="ho-card">
-                <h3 class="ho-titulo-cards">MEMBERS</h3>
-                <div class="ho-cxazul">
-                    <div class="ho-img-membros"></div>
-                    <p class="ho-txt-cxazul">Here you’ll find an innovative, collaborative space where each member plays an essential role in our collective success.</p>
-                </div>
-            </a>
+            <div class="ho-caixaazul">
 
-            <a href="projetos.html" class="ho-card">
-                <h3 class="ho-titulo-cards">PROJECTS</h3>
-                <div class="ho-cxazul">
-                    <div class="ho-img-projetos"></div>
-                    <p class="ho-txt-cxazul">Discover our ongoing projects, explore innovations and the solutions we are developing.</p>
-                </div>
-            </a>
+                <a href="membros.html" class="ho-card">
+                    <h3 class="ho-titulo-cards">MEMBERS</h3>
+                    <div class="ho-cxazul">
+                        <div class="ho-img-membros"></div>
+                        <p class="ho-txt-cxazul">Here you’ll find an innovative, collaborative space where each member
+                            plays an essential role in our collective success.</p>
+                    </div>
+                </a>
 
-            <a href="sobre.html" class="ho-card">
-                <h3 class="ho-titulo-cards">ABOUT</h3>
-                <div class="ho-cxazul">
-                    <div class="ho-img-sobre"></div>
-                    <p class="ho-txt-cxazul">Learn more about our laboratory. All the key information is right here!</p>
-                </div>
-            </a>
+                <a href="projetos.html" class="ho-card">
+                    <h3 class="ho-titulo-cards">PROJECTS</h3>
+                    <div class="ho-cxazul">
+                        <div class="ho-img-projetos"></div>
+                        <p class="ho-txt-cxazul">Discover our ongoing projects, explore innovations and the solutions we
+                            are developing.</p>
+                    </div>
+                </a>
 
-            <a href="publicacoes.html" class="ho-card">
-                <h3 class="ho-titulo-cards">PUBLICATIONS</h3>
-                <div class="ho-cxazul">
-                    <div class="ho-img-publicacoes"></div>
-                    <p class="ho-txt-cxazul">Stay updated with our latest publications. AgriRSLab updates arrive here first!</p>
-                </div>
-            </a>
+                <a href="sobre.html" class="ho-card">
+                    <h3 class="ho-titulo-cards">ABOUT</h3>
+                    <div class="ho-cxazul">
+                        <div class="ho-img-sobre"></div>
+                        <p class="ho-txt-cxazul">Learn more about our laboratory. All the key information is right here!
+                        </p>
+                    </div>
+                </a>
 
-        </div>
+                <a href="publicacoes.html" class="ho-card">
+                    <h3 class="ho-titulo-cards">PUBLICATIONS</h3>
+                    <div class="ho-cxazul">
+                        <div class="ho-img-publicacoes"></div>
+                        <p class="ho-txt-cxazul">Stay updated with our latest publications. AgriRSLab updates arrive
+                            here first!</p>
+                    </div>
+                </a>
+
+            </div>
         </div>
 
         <div class="ho-cxnoticia">
             <div class="ho-noticias-container">
-                    
+
                 <div class="ho-noticias-principal">
                     <div class="ho-img-principal"></div>
                 </div>
-            
+
                 <div class="ho-noticias-lista">
                     <h2>Latest News</h2>
-                        
+
                     <a href="noticia1.html" class="ho-noticia-item">
                         <img class="ho-noticia-thumb">
                         <div class="ho-noticia-conteudo">
                             <h3 class="ho-noticia-titulo">News Title 1</h3>
-                            <p class="ho-noticia-resumo">Short summary of the news. Click to view the details and read the full text.</p>
+                            <p class="ho-noticia-resumo">Short summary of the news. Click to view the details and read
+                                the full text.</p>
                             <span class="ho-noticia-mais">MORE</span>
                         </div>
                     </a>
-                        
+
                     <a href="noticia2.html" class="ho-noticia-item">
                         <div class="ho-noticia-thumb"></div>
                         <div class="ho-noticia-conteudo">
                             <h3 class="ho-noticia-titulo">News Title 2</h3>
-                            <p class="ho-noticia-resumo">Short summary of the news. Click to view the details and read the full text.</p>
+                            <p class="ho-noticia-resumo">Short summary of the news. Click to view the details and read
+                                the full text.</p>
                             <span class="ho-noticia-mais">MORE</span>
                         </div>
                     </a>
-                        
+
                     <a href="noticia3.html" class="ho-noticia-item">
                         <div class="ho-noticia-thumb"></div>
                         <div class="ho-noticia-conteudo">
                             <h3 class="ho-noticia-titulo">News Title 3</h3>
-                            <p class="ho-noticia-resumo">Short summary of the news. Click to view the details and read the full text.</p>
+                            <p class="ho-noticia-resumo">Short summary of the news. Click to view the details and read
+                                the full text.</p>
                             <span class="ho-noticia-mais">MORE</span>
                         </div>
                     </a>
@@ -273,7 +289,8 @@
                         <div class="ho-noticia-thumb"></div>
                         <div class="ho-noticia-conteudo">
                             <h3 class="ho-noticia-titulo">News Title 4</h3>
-                            <p class="ho-noticia-resumo">Short summary of the news. Click to view the details and read the full text.</p>
+                            <p class="ho-noticia-resumo">Short summary of the news. Click to view the details and read
+                                the full text.</p>
                             <span class="ho-noticia-mais">MORE</span>
                         </div>
                     </a>
@@ -282,7 +299,7 @@
         </div>
 
     </main>
-    
+
     <script src="../src/scripts/home.js"></script>
 
     <footer>
@@ -316,4 +333,5 @@
     </footer>
     <script src="../src/scripts/switch.js" defer></script>
 </body>
+
 </html>

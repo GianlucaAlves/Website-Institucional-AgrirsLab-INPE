@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     // 2. Busca os dados daquela vaga específica na API
     //    (!!! ATENÇÃO: Seu backend precisa ter essa rota: '/posts/:id')
-    const res = await fetch(`http://localhost:3000/posts/${vagaId}`);
+    const res = await fetch(`${window.API_BASE_URL}/posts/${vagaId}`);
     const vaga = await res.json();
 
     // 3. Formata a data que veio do BD

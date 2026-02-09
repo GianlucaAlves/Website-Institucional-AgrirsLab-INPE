@@ -30,7 +30,6 @@ async function findImage(base) {
   return null;
 }
 
-
 /*
   Nosso script principal
 */
@@ -45,7 +44,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       return;
     }
 
-    const res = await fetch(`http://localhost:3000/posts/${id}`);
+    const res = await fetch(`${window.API_BASE_URL}/posts/${id}`);
     const noticia = await res.json();
     console.log("[Noticia Individual] Dados recebidos:", noticia); // LOG B
 
@@ -64,9 +63,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.querySelector(".ni-text p").innerHTML = noticia.co_conteudo
       ? noticia.co_conteudo.replace(/\n/g, "<br>")
       : "";
-   
-      const imgPath = `http://localhost:3000/uploads/${noticia.co_imagem}`;
-      document.getElementById('ni-img').src = imgPath;
+
+    const imgPath = `${window.API_BASE_URL}/uploads/${noticia.co_imagem}`;
+    document.getElementById("ni-img").src = imgPath;
   } catch (err) {
     console.error("Erro ao carregar notícia:", err);
   }

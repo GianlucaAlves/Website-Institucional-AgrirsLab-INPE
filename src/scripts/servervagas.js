@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   try {
     // 2. CORREÇÃO AQUI: Vaga é 'tipo=4' no seu BD
-    const res = await fetch("http://localhost:3000/posts?tipo=4");
+    const res = await fetch(`${window.API_BASE_URL}/posts?tipo=4`);
     const data = await res.json();
 
     data.sort((a, b) => {
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           day: "2-digit",
           month: "long",
           year: "numeric",
-        }
+        },
       );
 
       // 5. Monta o HTML com os nomes CORRETOS do BD
@@ -53,7 +53,6 @@ document.addEventListener("DOMContentLoaded", async () => {
     // --- NOVO: Avisa que as vagas chegaram ---
     const eventoPronto = new Event("vagasCarregadas");
     document.dispatchEvent(eventoPronto);
-
   } catch (err) {
     console.error("Erro ao carregar vagas:", err);
     // Mensagem de fallback caso a API dê pau

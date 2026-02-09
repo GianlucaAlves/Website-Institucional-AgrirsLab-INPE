@@ -2,20 +2,23 @@
 <html lang="pt-BR">
 
 <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="../src/styles/layout/membro.css">
-      <link rel="stylesheet" href="../src/styles/global.css">
-      <link rel="stylesheet" href="../src/styles/components/title.css">
-      <link rel="stylesheet" href="../src/styles/components/title.css">
-      <link rel="icon" type="image/x-icon" href="../src/assets/image/Logo.svg">
-      <title>AgriRSLab - Membros</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/styles/layout/membro.css">
+    <link rel="stylesheet" href="../src/styles/global.css">
+    <link rel="stylesheet" href="../src/styles/components/title.css">
+    <link rel="stylesheet" href="../src/styles/components/title.css">
+    <link rel="icon" type="image/x-icon" href="../src/assets/image/Logo.svg">
+    <script src="/src/scripts/api-config.js"></script>
+    <title>AgriRSLab - Membros</title>
 </head>
 
 <body>
-      <header>
+    <header>
         <div class="content-header">
-            <a href="home.html"><div class="logo"></div></a>
+            <a href="home.html">
+                <div class="logo"></div>
+            </a>
             <div class="options">
                 <div class="selected-box">
                     <a href="home.html"><b>Home</b></a>
@@ -80,88 +83,88 @@
         </label>
     </header>
 
-      <div class="responsive-menu">
-            <div class="logo"></div>
-            <div class="space"></div>
-            <!-- Checkbox invisível para controlar o menu -->
-            <input type="checkbox" id="menu-toggle">
+    <div class="responsive-menu">
+        <div class="logo"></div>
+        <div class="space"></div>
+        <!-- Checkbox invisível para controlar o menu -->
+        <input type="checkbox" id="menu-toggle">
 
-            <!-- Ícone hambúrguer -->
-            <label for="menu-toggle" class="menu-icon">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-            </label>
+        <!-- Ícone hambúrguer -->
+        <label for="menu-toggle" class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
 
-            <!-- Menu Dropdown -->
-            <nav class="menu">
+        <!-- Menu Dropdown -->
+        <nav class="menu">
 
-                  <ul>
-                        <label class="sw-switch">
-                              <input type="checkbox">
-                              <div class="sw-slider">
-                                    <span class="sw-text-left">en</span>
-                                    <span class="sw-text-right">pt-br</span>
-                                    <div class="sw-circle"></div>
-                              </div>
-                        </label>
-                        <li><a href="home.html">Home</a></li>
-                        <hr>
+            <ul>
+                <label class="sw-switch">
+                    <input type="checkbox">
+                    <div class="sw-slider">
+                        <span class="sw-text-left">en</span>
+                        <span class="sw-text-right">pt-br</span>
+                        <div class="sw-circle"></div>
+                    </div>
+                </label>
+                <li><a href="home.html">Home</a></li>
+                <hr>
 
-                        <li class="dropdown">
-                              <input type="checkbox" id="AgriRSLab-menu" class="dropdown-toggle">
-                              <label for="AgriRSLab-menu" class="menu-AgriRSLab">AgriRSLab <div class="icon-arrow"><img
-                                                src="../src/assets/svg/caret-down-solid-full.svg" alt=""></div></label>
+                <li class="dropdown">
+                    <input type="checkbox" id="AgriRSLab-menu" class="dropdown-toggle">
+                    <label for="AgriRSLab-menu" class="menu-AgriRSLab">AgriRSLab <div class="icon-arrow"><img
+                                src="../src/assets/svg/caret-down-solid-full.svg" alt=""></div></label>
 
-                              <div class="mbl-dropdown-content">
-                                    <a href="sobre.html">Sobre</a>
-                                    <a href="membros.html">Membros</a>
-                                    <a href="projetos.html">Projetos</a>
-                                    <a href="atuacao.html">Áreas de atuação</a>
-                              </div>
-                        </li>
+                    <div class="mbl-dropdown-content">
+                        <a href="sobre.html">Sobre</a>
+                        <a href="membros.html">Membros</a>
+                        <a href="projetos.html">Projetos</a>
+                        <a href="atuacao.html">Áreas de atuação</a>
+                    </div>
+                </li>
 
-                        <hr>
-                        <li><a href="vagas.html">Vagas</a></li>
-                        <hr>
-                        <li class="dropdown">
-                              <input type="checkbox" id="Publicacoes-menu" class="dropdown-toggle">
-                              <label for="Publicacoes-menu" class="menu-AgriRSLab">Publicações <div class="icon-arrow">
-                                          <img src="../src/assets/svg/caret-down-solid-full.svg" alt="">
-                                    </div></label>
+                <hr>
+                <li><a href="vagas.html">Vagas</a></li>
+                <hr>
+                <li class="dropdown">
+                    <input type="checkbox" id="Publicacoes-menu" class="dropdown-toggle">
+                    <label for="Publicacoes-menu" class="menu-AgriRSLab">Publicações <div class="icon-arrow">
+                            <img src="../src/assets/svg/caret-down-solid-full.svg" alt="">
+                        </div></label>
 
-                              <div class="mbl-dropdown-content">
-                                    <a href="publicacoes.html">Feed</a>
-                                    <a href="noticias.html">Notícias</a>
-                              </div>
-                        </li>
-                        <hr>
-                        <li><a href="contato.html">Contato</a></li>
+                    <div class="mbl-dropdown-content">
+                        <a href="publicacoes.html">Feed</a>
+                        <a href="noticias.html">Notícias</a>
+                    </div>
+                </li>
+                <hr>
+                <li><a href="contato.html">Contato</a></li>
 
-                  </ul>
-            </nav>
-      </div>
+            </ul>
+        </nav>
+    </div>
 
-      <main>
-            <section id="membros-container">
-                  <h1 id="title">Membros</h1>
-                  <div class="title-line"></div>
+    <main>
+        <section id="membros-container">
+            <h1 id="title">Membros</h1>
+            <div class="title-line"></div>
 
-                  <div class="mb-subtitle">
-                        <p class="mb-name">
-                              Coordernador
-                        </p>
-                  </div>
-
-                  
-            </section>
-
-            <!-- FIM CARDS -->
+            <div class="mb-subtitle">
+                <p class="mb-name">
+                    Coordernador
+                </p>
             </div>
 
-      </main>
 
-      <footer>
+        </section>
+
+        <!-- FIM CARDS -->
+        </div>
+
+    </main>
+
+    <footer>
         <div class="footer">
             <div class="footer-title"><a href=""></a><b>AgriRSLab</b></div>
             <div class="footer-options">
@@ -185,7 +188,8 @@
                 </div>
                 <div class="social-midia">
                     <a href="" target="_blank"><img src="../src/assets/image/linkedin.png" alt=""></a>
-                    <a href="https://www.instagram.com/agrirslab.inpe/" target="_blank"><img src="../src/assets/image/instagram.png" alt=""></a>
+                    <a href="https://www.instagram.com/agrirslab.inpe/" target="_blank"><img
+                            src="../src/assets/image/instagram.png" alt=""></a>
                 </div>
             </div>
         </div>
@@ -203,16 +207,18 @@
             </div>
             <div class="responsive-social">
                 <div class="social-midia">
-                    <a href="#" class="linkedin2" target="_blank"><img src="../src/assets/image/linkedin.png" alt=""></a>
-                    <a href="https://www.instagram.com/agrirslab.inpe/" class="instagram2" target="_blank"><img src="../src/assets/image/instagram.png" alt=""></a>
+                    <a href="#" class="linkedin2" target="_blank"><img src="../src/assets/image/linkedin.png"
+                            alt=""></a>
+                    <a href="https://www.instagram.com/agrirslab.inpe/" class="instagram2" target="_blank"><img
+                            src="../src/assets/image/instagram.png" alt=""></a>
                 </div>
             </div>
         </div>
 
         </label>
     </div>
-      <script src="../src/scripts/membros.js" defer></script>
-      <script src="../src/scripts/switch.js" defer></script>
+    <script src="../src/scripts/membros.js" defer></script>
+    <script src="../src/scripts/switch.js" defer></script>
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 // =========================
 // CONFIGURAÇÃO
 // =========================
-const API_URL = "http://localhost:3000/membros"; // ajuste se necessário
+const API_URL = `${window.API_BASE_URL}/membros`; // ajuste se necessário
 const containerPrincipal = document.querySelector("#membros-container");
 
 // =========================
@@ -14,13 +14,19 @@ function limparEstruturaEstatica() {
   // Seleciona apenas filhos diretos para evitar remover subtítulos em outros lugares
   const filhosDiretos = Array.from(containerPrincipal.children);
 
-  filhosDiretos.forEach(child => {
-    if (child.classList && (child.classList.contains("mb-subtitle") || child.classList.contains("mb-cards"))) {
+  filhosDiretos.forEach((child) => {
+    if (
+      child.classList &&
+      (child.classList.contains("mb-subtitle") ||
+        child.classList.contains("mb-cards"))
+    ) {
       child.remove();
     }
   });
 
-  console.log("[membros.js] Estrutura estática (subtitles + mb-cards) removida.");
+  console.log(
+    "[membros.js] Estrutura estática (subtitles + mb-cards) removida.",
+  );
 }
 
 // =========================
@@ -56,7 +62,7 @@ function criarCardHTML(m) {
     <div class="mb-card-container">
       <div class="mb-card">
         <div class="mb-img">
-          <img src="http://localhost:3000/uploads/${imagem}" alt="">
+          <img src="${window.API_BASE_URL}/uploads/${imagem}" alt="">
         </div>
         <div class="mb-bottom">
           <p class="mb-name">${nome}</p>
@@ -95,15 +101,14 @@ const ordemCargos = [
   "Doutorando",
   "Mestrando",
   "Bolsista",
-  "Sem cargo"
+  "Sem cargo",
 ];
 
 // =========================
 // RENDERIZAÇÃO (MODIFICADA)
 // =========================
 function renderizarPorCargo(porCargo) {
-
-  ordemCargos.forEach(cargoName => {
+  ordemCargos.forEach((cargoName) => {
     if (!porCargo[cargoName]) return; // pula cargos que não vieram do backend
 
     // Ordena os membros dentro de cada cargo
@@ -116,7 +121,7 @@ function renderizarPorCargo(porCargo) {
     const wrapper = criarWrapperCards();
 
     // Adiciona cards
-    porCargo[cargoName].forEach(m => {
+    porCargo[cargoName].forEach((m) => {
       wrapper.innerHTML += criarCardHTML(m);
     });
 
@@ -127,7 +132,6 @@ function renderizarPorCargo(porCargo) {
 
   console.log("Renderização com ordem fixa:", ordemCargos);
 }
-
 
 // =========================
 // CARREGA MEMBROS DO BACKEND
@@ -147,7 +151,9 @@ async function carregarMembros() {
     const resp = await fetch(API_URL, { cache: "no-store" });
 
     if (!resp.ok) {
-      console.error(`[membros.js] Erro HTTP: ${resp.status} ${resp.statusText}`);
+      console.error(
+        `[membros.js] Erro HTTP: ${resp.status} ${resp.statusText}`,
+      );
       // opcional: reexibir conteúdo estático se quiser (não estamos fazendo isso aqui)
       return;
     }
@@ -161,7 +167,7 @@ async function carregarMembros() {
 
     // 3) Agrupar por cargo
     const porCargo = {};
-    membros.forEach(m => {
+    membros.forEach((m) => {
       const cargo = (m.ca_nome_cargo || "Sem cargo").trim();
       if (!porCargo[cargo]) porCargo[cargo] = [];
       porCargo[cargo].push(m);
@@ -169,7 +175,6 @@ async function carregarMembros() {
 
     // 4) Renderizar
     renderizarPorCargo(porCargo);
-
   } catch (err) {
     console.error("[membros.js] Erro ao carregar membros:", err);
   }

@@ -13,6 +13,7 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/x-icon" href="../src/assets/image/Logo.svg">
+    <script src="/src/scripts/api-config.js"></script>
     <link rel="stylesheet" href="../src/styles/components/button.css">
 </head>
 
@@ -20,7 +21,9 @@
     <!--colar o header padrão-->
     <header>
         <div class="content-header">
-            <a href="home.html"><div class="logo"></div></a>
+            <a href="home.html">
+                <div class="logo"></div>
+            </a>
             <div class="options">
                 <div class="box">
                     <a href="home.html"><b>Home</b></a>
@@ -149,91 +152,91 @@
 
 
     <!--colar o código da página-->
-<main>
+    <main>
 
-    <h1 id="title">Notícias</h1>
-      <div id="va-title__info">
-                
-                 <div class="share-container">
-                    <span id="no-title__info-nav_title">Compartilhe: </span>
+        <h1 id="title">Notícias</h1>
+        <div id="va-title__info">
 
-                    <a href="#" id="share-facebook" target="_blank" rel="noopener noreferrer"
-                        aria-label="Compartilhar no Facebook" class="btn-share">
-                        <i style="color: #2f4f4f;" class="fa-brands fa-facebook fa-xl"></i>
-                    </a>
+            <div class="share-container">
+                <span id="no-title__info-nav_title">Compartilhe: </span>
 
-                    <a href="#" id="share-linkedin" target="_blank" rel="noopener noreferrer"
-                        aria-label="Compartilhar no LinkedIn" class="btn-share">
-                        <i class="fa-brands fa-linkedin fa-xl" style="color: #2f4f4f;"></i>
-                    </a>
+                <a href="#" id="share-facebook" target="_blank" rel="noopener noreferrer"
+                    aria-label="Compartilhar no Facebook" class="btn-share">
+                    <i style="color: #2f4f4f;" class="fa-brands fa-facebook fa-xl"></i>
+                </a>
 
-                    <a href="https://www.instagram.com/agrirslab.inpe/" target="_blank" rel="noopener noreferrer"
-                        aria-label="Ir para o Instagram" class="btn-share">
-                        <i class="fa-brands fa-instagram fa-xl" style="color: #2f4f4f;"></i>
-                    </a>
+                <a href="#" id="share-linkedin" target="_blank" rel="noopener noreferrer"
+                    aria-label="Compartilhar no LinkedIn" class="btn-share">
+                    <i class="fa-brands fa-linkedin fa-xl" style="color: #2f4f4f;"></i>
+                </a>
+
+                <a href="https://www.instagram.com/agrirslab.inpe/" target="_blank" rel="noopener noreferrer"
+                    aria-label="Ir para o Instagram" class="btn-share">
+                    <i class="fa-brands fa-instagram fa-xl" style="color: #2f4f4f;"></i>
+                </a>
+            </div>
+        </div>
+        <div class="title-line"></div>
+
+        <div class="noticias-grid"><!-- Exemplo de card de notícia -->
+            <div class="no-content">
+                <img class="no-img">
+                <div class="no-text">
+                    <h3 class="no-sub">Titulo Noticia</h3>
+                    <p>Breve resumo da noticia Breve resumo da noticia...</p>
                 </div>
             </div>
-    <div class="title-line"></div>
+            <hr class="no-lf">
 
-    <div class="noticias-grid"><!-- Exemplo de card de notícia -->
-    <div class="no-content">
-        <img class="no-img">
-        <div class="no-text">
-            <h3 class="no-sub">Titulo Noticia</h3>
-            <p>Breve resumo da noticia Breve resumo da noticia...</p>
+            <div class="no-content">
+                <div class="no-img"></div>
+                <div class="no-text">
+                    <h3 class="no-sub">Titulo Noticia</h3>
+                    <p>Breve resumo da noticia Breve resumo da noticia...</p>
+                </div>
+            </div>
+            <hr class="no-lf">
+
+            <div class="no-content">
+                <div class="no-img"></div>
+                <div class="no-text">
+                    <h3 class="no-sub">Titulo Noticia</h3>
+                    <p>Breve resumo da noticia Breve resumo da noticia...</p>
+                </div>
+            </div>
+            <hr class="no-lf">
+
+            <div class="no-content">
+                <div class="no-img"></div>
+                <div class="no-text">
+                    <h3 class="no-sub">Titulo Noticia</h3>
+                    <p>Breve resumo da noticia Breve resumo da noticia...</p>
+                </div>
+            </div>
+            <hr class="no-lf">
+
+            <div class="no-content">
+                <div class="no-img"></div>
+                <div class="no-text">
+                    <h3 class="no-sub">Titulo Noticia</h3>
+                    <p>Breve resumo da noticia Breve resumo da noticia...</p>
+                </div>
+            </div>
+            <hr class="no-lf">
+
+        </div> <!-- Continue criando div.no-content conforme precisar -->
+
+        <div class="no-buttons">
+            <button class="main-buttons" id="prev">
+                Anterior
+            </button>
+
+            <button class="main-buttons" id="prox">
+                Próximo
+            </button>
         </div>
-    </div>
-    <hr class="no-lf">
 
-    <div class="no-content">
-        <div class="no-img"></div>
-        <div class="no-text">
-            <h3 class="no-sub">Titulo Noticia</h3>
-            <p>Breve resumo da noticia Breve resumo da noticia...</p>
-        </div>
-    </div>
-    <hr class="no-lf">
-
-    <div class="no-content">
-        <div class="no-img"></div>
-        <div class="no-text">
-            <h3 class="no-sub">Titulo Noticia</h3>
-            <p>Breve resumo da noticia Breve resumo da noticia...</p>
-        </div>
-    </div>
-    <hr class="no-lf">
-
-    <div class="no-content">
-        <div class="no-img"></div>
-        <div class="no-text">
-            <h3 class="no-sub">Titulo Noticia</h3>
-            <p>Breve resumo da noticia Breve resumo da noticia...</p>
-        </div>
-    </div>
-    <hr class="no-lf">
-
-    <div class="no-content">
-        <div class="no-img"></div>
-        <div class="no-text">
-            <h3 class="no-sub">Titulo Noticia</h3>
-            <p>Breve resumo da noticia Breve resumo da noticia...</p>
-        </div>
-    </div>
-    <hr class="no-lf">
-
-    </div> <!-- Continue criando div.no-content conforme precisar -->
-
-    <div class="no-buttons">
-        <button class="main-buttons" id="prev">
-            Anterior
-        </button>
-
-        <button class="main-buttons" id="prox">
-            Próximo
-        </button>
-    </div>
-
-</main>
+    </main>
 
 
     <!--colar o footer padrão-->
@@ -264,7 +267,8 @@
                 </div>
                 <div class="social-midia">
                     <a href="" target="_blank"><img src="../src/assets/image/linkedin.png" alt=""></a>
-                    <a href="https://www.instagram.com/agrirslab.inpe/" target="_blank"><img src="../src/assets/image/instagram.png" alt=""></a>
+                    <a href="https://www.instagram.com/agrirslab.inpe/" target="_blank"><img
+                            src="../src/assets/image/instagram.png" alt=""></a>
                 </div>
             </div>
         </div>
@@ -282,8 +286,10 @@
             </div>
             <div class="responsive-social">
                 <div class="social-midia">
-                    <a href="#" class="linkedin2" target="_blank"><img src="../src/assets/image/linkedin.png" alt=""></a>
-                    <a href="https://www.instagram.com/agrirslab.inpe/" class="instagram2" target="_blank"><img src="../src/assets/image/instagram.png" alt=""></a>
+                    <a href="#" class="linkedin2" target="_blank"><img src="../src/assets/image/linkedin.png"
+                            alt=""></a>
+                    <a href="https://www.instagram.com/agrirslab.inpe/" class="instagram2" target="_blank"><img
+                            src="../src/assets/image/instagram.png" alt=""></a>
                 </div>
             </div>
         </div>

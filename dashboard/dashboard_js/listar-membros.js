@@ -1,6 +1,4 @@
-const apiUrl = "http://localhost:3000/membros"; 
-
-
+const apiUrl = `${window.API_BASE_URL}/membros`;
 
 // CARREGAR MEMBROS
 async function loadMembros(cargo = "") {
@@ -8,12 +6,10 @@ async function loadMembros(cargo = "") {
   const res = await fetch(url);
   const data = await res.json();
 
-   
-
   const tbody = document.querySelector("#membrosTable tbody");
   tbody.innerHTML = "";
 
-  data.forEach(m => {
+  data.forEach((m) => {
     const tr = document.createElement("tr");
     tr.innerHTML = `
       <td>${m.id_membro}</td>
@@ -31,8 +27,6 @@ async function loadMembros(cargo = "") {
   });
 }
 
-
-
 // EXCLUIR MEMBRO
 async function deleteMembro(id) {
   if (!confirm("Deseja realmente excluir este membro?")) return;
@@ -41,7 +35,7 @@ async function deleteMembro(id) {
 }
 
 // FILTRO POR CARGO
-document.getElementById("filterCargo").addEventListener("change", e => {
+document.getElementById("filterCargo").addEventListener("change", (e) => {
   loadMembros(e.target.value);
 });
 

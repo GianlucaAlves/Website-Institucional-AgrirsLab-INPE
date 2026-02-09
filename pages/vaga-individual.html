@@ -12,13 +12,16 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../src/styles/components/title.css">
     <link rel="icon" type="image/x-icon" href="../src/assets/image/Logo.svg">
+    <script src="/src/scripts/api-config.js"></script>
     <title>AgriRSLab - Vagas</title>
 </head>
 
 <body>
     <header>
         <div class="content-header">
-            <a href="home.html"><div class="logo"></div></a>
+            <a href="home.html">
+                <div class="logo"></div>
+            </a>
             <div class="options">
                 <div class="box">
                     <a href="home.html"><b>Home</b></a>
@@ -147,70 +150,71 @@
 
     <main>
         <div id="va">
-        <div id="va-title">
-            <h1 id="title">Vaga não encontrada.</h1>
+            <div id="va-title">
+                <h1 id="title">Vaga não encontrada.</h1>
 
-            <div id="va-title__info">
-                <p><em></em></p>
-                <div class="share-container">
-                <span id="no-title__info-nav_title">Compartilhe: </span>
+                <div id="va-title__info">
+                    <p><em></em></p>
+                    <div class="share-container">
+                        <span id="no-title__info-nav_title">Compartilhe: </span>
 
-                    <a href="#" id="share-facebook" target="_blank" rel="noopener noreferrer"
-                        aria-label="Compartilhar no Facebook" class="btn-share">
-                        <i style="color: #2f4f4f;" class="fa-brands fa-facebook fa-xl"></i>
-                    </a>
+                        <a href="#" id="share-facebook" target="_blank" rel="noopener noreferrer"
+                            aria-label="Compartilhar no Facebook" class="btn-share">
+                            <i style="color: #2f4f4f;" class="fa-brands fa-facebook fa-xl"></i>
+                        </a>
 
-                    <a href="#" id="share-linkedin" target="_blank" rel="noopener noreferrer"
-                        aria-label="Compartilhar no LinkedIn" class="btn-share">
-                        <i class="fa-brands fa-linkedin fa-xl" style="color: #2f4f4f;"></i>
-                    </a>
+                        <a href="#" id="share-linkedin" target="_blank" rel="noopener noreferrer"
+                            aria-label="Compartilhar no LinkedIn" class="btn-share">
+                            <i class="fa-brands fa-linkedin fa-xl" style="color: #2f4f4f;"></i>
+                        </a>
 
-                    <a href="https://www.instagram.com/agrirslab.inpe/" target="_blank" rel="noopener noreferrer"
-                        aria-label="Ir para o Instagram" class="btn-share">
-                        <i class="fa-brands fa-instagram fa-xl" style="color: #2f4f4f;"></i>
-                    </a>
+                        <a href="https://www.instagram.com/agrirslab.inpe/" target="_blank" rel="noopener noreferrer"
+                            aria-label="Ir para o Instagram" class="btn-share">
+                            <i class="fa-brands fa-instagram fa-xl" style="color: #2f4f4f;"></i>
+                        </a>
+                    </div>
                 </div>
+                <div class="title-line"></div>
             </div>
-            <div class="title-line"></div>
+            <div id="va-content">
+                <ol>
+                    <li class="vai-content-block">
+                        <h2 class="vai-content-title">Objetivo da vaga</h2>
+                        <p>Breve descrição do motivo da criação da vaga.</p>
+                    </li>
+                    <li class="vai-content-block">
+                        <h2 class="vai-content-title">Requisitos</h2>
+                        <ul>
+                            <li>Requisito 1</li>
+                            <li>Requisito 2</li>
+                            <li>Requisito 3</li>
+                        </ul>
+                    </li>
+                    <li class="vai-content-block">
+                        <h2 class="vai-content-title">RESUMO DO PLANO DE TRABALHO</h2>
+                        <p>Breve descrição sobre a atividade que será exercida.</p>
+                    </li>
+                    <li class="vai-content-block">
+                        <h2 class="vai-content-title">ATIVIDADES DO PLANO DE TRABALHO</h2>
+                        <ul>
+                            <li>Descrição detalhada da atividade a ser executada</li>
+                            <li>Descrição detalhada da atividade a ser executada</li>
+                            <li>Descrição detalhada da atividade a ser executada</li>
+                            <li>Descrição detalhada da atividade a ser executada</li>
+                        </ul>
+                    </li>
+                    <li class="vai-content-block">
+                        <h2 class="vai-content-title">PROCESSO DE SELEÇÃO</h2>
+                        <p>Os interessados deverão enviar o <em>currículo</em> para o endereço de email da <a
+                                href="../pages/contato.html">AgriRSLab</a> com o assunto preenchido com o nome da vaga.
+                        </p>
+                    </li>
+                    <div id="vai-content-btn-box" class="vai-content-block">
+                        <a id="vai-content-btn" href="../pages/vagas.html">Voltar</a>
+                    </div>
+                </ol>
+            </div>
         </div>
-        <div id="va-content">
-            <ol>
-                <li class="vai-content-block">
-                    <h2 class="vai-content-title">Objetivo da vaga</h2>
-                    <p>Breve descrição do motivo da criação da vaga.</p>
-                </li>
-                <li class="vai-content-block">
-                    <h2 class="vai-content-title">Requisitos</h2>
-                    <ul>
-                        <li>Requisito 1</li>
-                        <li>Requisito 2</li>
-                        <li>Requisito 3</li>
-                    </ul>
-                </li>
-                <li class="vai-content-block">
-                    <h2 class="vai-content-title">RESUMO DO PLANO DE TRABALHO</h2>
-                    <p>Breve descrição sobre a atividade que será exercida.</p>
-                </li>
-                <li class="vai-content-block">
-                    <h2 class="vai-content-title">ATIVIDADES DO PLANO DE TRABALHO</h2>
-                    <ul>
-                        <li>Descrição detalhada da atividade a ser executada</li>
-                        <li>Descrição detalhada da atividade a ser executada</li>
-                        <li>Descrição detalhada da atividade a ser executada</li>
-                        <li>Descrição detalhada da atividade a ser executada</li>
-                    </ul>
-                </li>
-                <li class="vai-content-block">
-                    <h2 class="vai-content-title">PROCESSO DE SELEÇÃO</h2>
-                    <p>Os interessados deverão enviar o <em>currículo</em> para o endereço de email da <a
-                            href="../pages/contato.html">AgriRSLab</a> com o assunto preenchido com o nome da vaga.</p>
-                </li>
-                <div id="vai-content-btn-box" class="vai-content-block">
-                    <a id="vai-content-btn" href="../pages/vagas.html">Voltar</a>
-                </div>
-            </ol>
-        </div>
-    </div>
     </main>
 
     <footer>
@@ -237,7 +241,8 @@
                 </div>
                 <div class="social-midia">
                     <a href="" target="_blank"><img src="../src/assets/image/linkedin.png" alt=""></a>
-                    <a href="https://www.instagram.com/agrirslab.inpe/" target="_blank"><img src="../src/assets/image/instagram.png" alt=""></a>
+                    <a href="https://www.instagram.com/agrirslab.inpe/" target="_blank"><img
+                            src="../src/assets/image/instagram.png" alt=""></a>
                 </div>
             </div>
         </div>
@@ -255,15 +260,17 @@
             </div>
             <div class="responsive-social">
                 <div class="social-midia">
-                    <a href="#" class="linkedin2" target="_blank"><img src="../src/assets/image/linkedin.png" alt=""></a>
-                    <a href="https://www.instagram.com/agrirslab.inpe/" class="instagram2" target="_blank"><img src="../src/assets/image/instagram.png" alt=""></a>
+                    <a href="#" class="linkedin2" target="_blank"><img src="../src/assets/image/linkedin.png"
+                            alt=""></a>
+                    <a href="https://www.instagram.com/agrirslab.inpe/" class="instagram2" target="_blank"><img
+                            src="../src/assets/image/instagram.png" alt=""></a>
                 </div>
             </div>
         </div>
 
         </label>
     </div>
-    
+
     <script src="../src/scripts/switch.js" defer></script>
     <script src="../src/scripts/share.js"></script>
     <script src="../src/scripts/serverVagaIndividual.js"></script>

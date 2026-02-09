@@ -1,4 +1,4 @@
-const apiUrl = "http://localhost:3000/membros";
+const apiUrl = `${window.API_BASE_URL}/membros`;
 
 const form = document.getElementById("membroForm");
 const msg = document.getElementById("msg");
@@ -29,11 +29,11 @@ if (!token || !isAdmin) {
 // =======================
 async function loadCargos() {
   try {
-    const res = await fetch("http://localhost:3000/membros/tipos-cargo"); // rota para listar cargos
+    const res = await fetch(`${window.API_BASE_URL}/membros/tipos-cargo`); // rota para listar cargos
     if (!res.ok) throw new Error("Erro ao buscar cargos");
 
     const cargos = await res.json();
-    cargos.forEach(c => {
+    cargos.forEach((c) => {
       const option = document.createElement("option");
       option.value = c.id_cargo;
       option.textContent = c.ca_nome_cargo;
@@ -49,7 +49,7 @@ async function loadCargos() {
 // =======================
 // ENVIO DO FORMULÁRIO
 // =======================
-form.addEventListener("submit", async e => {
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const payload = {
@@ -58,7 +58,7 @@ form.addEventListener("submit", async e => {
     me_email: document.getElementById("me_email").value.trim(),
     me_senha: document.getElementById("me_senha").value,
     me_cargo: cargoSelect.value || null,
-    me_administrador: document.getElementById("me_administrador").checked
+    me_administrador: document.getElementById("me_administrador").checked,
   };
 
   console.log("Payload enviado:", payload);
@@ -68,9 +68,9 @@ form.addEventListener("submit", async e => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token}`
+        Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
     });
 
     const data = await res.json();
@@ -85,7 +85,6 @@ form.addEventListener("submit", async e => {
     msg.textContent = `Membro ${data.me_nome} criado com sucesso!`;
     msg.style.color = "green";
     form.reset();
-
   } catch (err) {
     console.error("Erro na requisição:", err);
     msg.textContent = "Erro ao criar membro";

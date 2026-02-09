@@ -19,7 +19,8 @@ const __dirname = path.dirname(__filename);
 dotenv.config();
 const app = express();
 
-app.use(cors());
+const allowedOrigin = process.env.ALLOWED_ORIGIN || "*";
+app.use(cors({ origin: allowedOrigin }));
 app.use(express.json());
 
 // 2. ADICIONADO: O "tradutor" para ler os dados do formulário HTML
@@ -50,8 +51,8 @@ const transporter = nodemailer.createTransport({
   port: 587,
   secure: false,
   auth: {
-    user: "ceconlucasferreira@gmail.com", // Seu e-mail
-    pass: "spmzsbzrhipavsvh", // Sua senha de app
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
 });
 
@@ -61,8 +62,8 @@ app.post("/enviar", (req, res) => {
   console.log(req.body);
 
   const mailOptions = {
-    from: "ceconlucasferreira@gmail.com",
-    to: "lucasfcecon@outlook.com", // Para quem vai o e-mail
+    from: process.env.EMAIL_USER,
+    to: process.env.EMAIL_TO,
     replyTo: req.body.email,
     subject: `Nova mensagem do site: ${req.body.assunto}`,
     text: `
