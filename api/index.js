@@ -19,6 +19,9 @@ const __dirname = path.dirname(__filename);
 dotenv.config();
 const app = express();
 
+// CORS Configuration
+// IMPORTANT: In production, restrict CORS to your specific domain
+// Example: app.use(cors({ origin: 'https://your-domain.vercel.app' }));
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -43,8 +46,8 @@ const transporter = nodemailer.createTransport({
   port: 587,
   secure: false,
   auth: {
-    user: process.env.EMAIL_USER || "ceconlucasferreira@gmail.com",
-    pass: process.env.EMAIL_PASS || "spmzsbzrhipavsvh",
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS,
   },
 });
 
@@ -54,8 +57,8 @@ app.post("/enviar", (req, res) => {
   console.log(req.body);
 
   const mailOptions = {
-    from: process.env.EMAIL_USER || "ceconlucasferreira@gmail.com",
-    to: process.env.EMAIL_TO || "lucasfcecon@outlook.com",
+    from: process.env.EMAIL_USER,
+    to: process.env.EMAIL_TO,
     replyTo: req.body.email,
     subject: `Nova mensagem do site: ${req.body.assunto}`,
     text: `

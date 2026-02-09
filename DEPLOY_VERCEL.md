@@ -164,13 +164,27 @@ O Vercel detectará automaticamente as configurações através do arquivo `verc
 - Gere chaves JWT fortes e únicas
 
 ### CORS
-O CORS está configurado no arquivo `api/index.js` para aceitar requisições de qualquer origem. Em produção, considere restringir para seu domínio:
+O CORS está configurado no arquivo `api/index.js` para aceitar requisições de qualquer origem durante o desenvolvimento. **Em produção, você DEVE restringir para seu domínio específico:**
+
+```javascript
+// Em api/index.js, substituir:
+app.use(cors());
+
+// Por:
+app.use(cors({
+  origin: 'https://seu-dominio.vercel.app'
+}));
+```
+
+Ou use variável de ambiente:
 
 ```javascript
 app.use(cors({
-  origin: 'https://seu-dominio.com'
+  origin: process.env.ALLOWED_ORIGIN || '*'
 }));
 ```
+
+E configure `ALLOWED_ORIGIN` no Vercel Dashboard.
 
 ## 🐛 Troubleshooting
 
