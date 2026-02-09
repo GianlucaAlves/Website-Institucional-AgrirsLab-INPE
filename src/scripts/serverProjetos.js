@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const insertionPoint = container.querySelector(".main-buttons-pos");
 
   try {
-    const res = await fetch("http://localhost:3000/posts?tipo=3");
+    const res = await fetch(`${window.API_BASE_URL}/posts?tipo=3`);
     const data = await res.json();
 
     const staticArticles = container.querySelectorAll("article");
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       
       <img class="article-img"
-            src="http://localhost:3000/uploads/${projeto.co_imagem}" 
+            src="${window.API_BASE_URL}/uploads/${projeto.co_imagem}" 
             onerror="this.onerror=null; this.src='../src/assets/image/pc_home_carrosel1.webp';" 
             alt="${projeto.co_titulo}"
         />

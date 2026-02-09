@@ -1,7 +1,7 @@
 // =========================
 // CONFIGURAÇÃO
 // =========================
-const API_URL = "http://localhost:3000/membros"; // ajuste se necessário
+const API_URL = `${window.API_BASE_URL}/membros`; // ajuste se necessário
 const containerPrincipal = document.querySelector("#membros-container");
 
 // =========================
@@ -56,7 +56,7 @@ function criarCardHTML(m) {
     <div class="mb-card-container">
       <div class="mb-card">
         <div class="mb-img">
-          <img src="http://localhost:3000/uploads/${imagem}" alt="">
+          <img src="${window.API_BASE_URL}/uploads/${imagem}" alt="">
         </div>
         <div class="mb-bottom">
           <p class="mb-name">${nome}</p>

@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   try {
     // 2. CORREÇÃO AQUI: Vaga é 'tipo=4' no seu BD
-    const res = await fetch("http://localhost:3000/posts?tipo=4");
+    const res = await fetch(`${window.API_BASE_URL}/posts?tipo=4`);
     const data = await res.json();
 
     data.sort((a, b) => {

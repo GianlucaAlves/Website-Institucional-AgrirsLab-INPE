@@ -6,7 +6,7 @@ if (!token || !userData) {
 
 const params = new URLSearchParams(window.location.search);
 const membroId = params.get("id");
-const apiUrl = "http://localhost:3000/membros";
+const apiUrl = `${window.API_BASE_URL}/membros`;
 
 
 // Supondo que userData.me_administrador é o campo de admin do usuário logado

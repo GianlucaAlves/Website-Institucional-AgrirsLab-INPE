@@ -1,4 +1,4 @@
-const apiUrl = "http://localhost:3000/membros"; 
+const apiUrl = `${window.API_BASE_URL}/membros`; 
 
 
 

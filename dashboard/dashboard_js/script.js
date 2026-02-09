@@ -10,7 +10,7 @@ if (form) {
         const errorMessage = document.getElementById("error-message");
 
         try {
-            const res = await fetch("http://localhost:3000/api/login", {
+            const res = await fetch(`${window.API_BASE_URL}/api/login`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, password }),

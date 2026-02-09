@@ -19,7 +19,7 @@ function nextImage1() {
 
 document.addEventListener('DOMContentLoaded', () => {
         // Altere esta URL para a rota correta do seu backend
-        const API_URL = 'http://localhost:3000/posts/ultimas'; // Exemplo, ajuste a porta e o caminho
+        const API_URL = `${window.API_BASE_URL}/posts/ultimas`; // Exemplo, ajuste a porta e o caminho
 
         const noticiasListaContainer = document.querySelector('.ho-noticias-lista');
         // Mantemos o h2 e criamos uma div temporária para o conteúdo
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Montar o HTML do card
                     noticiaItem.innerHTML = `
                              <div class="ho-noticia-thumb-container">
-                             <img class="ho-noticia-thumb" src="http://localhost:3000/uploads/${noticia.co_imagem}" 
+                             <img class="ho-noticia-thumb" src="${window.API_BASE_URL}/uploads/${noticia.co_imagem}" 
                              onerror="this.onerror=null; this.src='../src/assets/image/pc_home_carrosel1.webp';" 
                              alt="${noticia.co_titulo}"
                             />

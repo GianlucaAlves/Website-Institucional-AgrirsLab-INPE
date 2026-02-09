@@ -1,4 +1,4 @@
-const apiUrl = "http://localhost:3000/posts";
+const apiUrl = `${window.API_BASE_URL}/posts`;
 const token = localStorage.getItem("token");
 const userData = JSON.parse(localStorage.getItem("user"));
 
