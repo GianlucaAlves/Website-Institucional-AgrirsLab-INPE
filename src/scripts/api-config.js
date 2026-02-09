@@ -3,6 +3,8 @@
 // Exemplo: <script src="/src/scripts/api-config.js"></script>
 
 (function () {
+  window.BACKEND_BASE_URL =
+    "https://website-institucional-agrirslab-inpe.onrender.com";
   // Detecta automaticamente se está em desenvolvimento ou produção
   const isDevelopment =
     window.location.hostname === "localhost" ||
