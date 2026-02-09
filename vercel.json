@@ -1,59 +1,10 @@
 {
   "version": 2,
   "name": "agrirs-lab-inpe",
-  "builds": [
-    {
-      "src": "api/index.js",
-      "use": "@vercel/node"
-    }
-  ],
   "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/api/index.js"
-    },
-    {
-      "source": "/dashboard/api/(.*)",
-      "destination": "/api/index.js"
-    },
-    {
-      "source": "/posts/(.*)",
-      "destination": "/api/index.js"
-    },
-    {
-      "source": "/membros/(.*)",
-      "destination": "/api/index.js"
-    },
-    {
-      "source": "/enviar",
-      "destination": "/api/index.js"
-    },
-    {
-      "source": "/uploads/(.*)",
-      "destination": "/api/index.js"
-    },
     {
       "source": "/",
       "destination": "/pages/home.html"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET, POST, PUT, DELETE, OPTIONS"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "Content-Type, Authorization"
-        }
-      ]
     }
   ]
 }
