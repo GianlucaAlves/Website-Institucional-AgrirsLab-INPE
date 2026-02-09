@@ -20,6 +20,7 @@
   <a href ="#tasks"> Tasks</a> |
 <a href ="#tecnologias">Tecnologias</a> |
   <a href ="#manual">Manual de Instalação</a>  | 
+  <a href ="#deploy">Deploy Vercel</a>  |
   <a href ="#equipe"> Equipe</a> |
   <a href ="#usuario"> Manual do Usuário</a> |
       <a href ="#user-stories"> User Stories</a>
@@ -352,6 +353,26 @@ O Back-end deve ser iniciado primeiro para que o Front-end possa se conectar a e
     
 
 **Parabéns!** Seu site agora está rodando localmente!
+
+## 🌐 Deploy no Vercel <a id="deploy"></a>
+
+Para fazer o deploy do projeto completo (website, dashboard e backend) no Vercel, siga o guia detalhado:
+
+> [📄 Guia Completo de Deploy no Vercel](DEPLOY_VERCEL.md)
+
+### Resumo Rápido
+
+1. **Conecte** seu repositório GitHub ao Vercel
+2. **Configure** as variáveis de ambiente (banco de dados, e-mail, JWT)
+3. **Faça deploy** - O Vercel detectará automaticamente a configuração via `vercel.json`
+4. **Acesse** seu site através da URL fornecida pelo Vercel
+
+O projeto está configurado com:
+- ✅ Serverless functions para o backend
+- ✅ Servir arquivos estáticos (website e dashboard)
+- ✅ Roteamento automático
+- ✅ CORS configurado
+- ✅ SSL/HTTPS automático
 
 ## 📘 Manual de Usuário e Catálogo de Funcionalidades  <a id="usuario"></a>
 
