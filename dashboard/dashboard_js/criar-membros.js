@@ -1,4 +1,4 @@
-const apiUrl = "http://localhost:3000/membros";
+const apiUrl = `${window.API_BASE_URL}/membros`;
 
 const form = document.getElementById("membroForm");
 const msg = document.getElementById("msg");
@@ -29,7 +29,7 @@ if (!token || !isAdmin) {
 // =======================
 async function loadCargos() {
   try {
-    const res = await fetch("http://localhost:3000/membros/tipos-cargo"); // rota para listar cargos
+    const res = await fetch(`${window.API_BASE_URL}/membros/tipos-cargo`); // rota para listar cargos
     if (!res.ok) throw new Error("Erro ao buscar cargos");
 
     const cargos = await res.json();

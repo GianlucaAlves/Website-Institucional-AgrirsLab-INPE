@@ -20,7 +20,7 @@ async function findImage(base) {
 document.addEventListener("DOMContentLoaded", async () => {
   const grid = document.querySelector(".noticias-grid"); // container no HTML
   try {
-    const res = await fetch("http://localhost:3000/posts?tipo=2"); // notícias
+    const res = await fetch(`${window.API_BASE_URL}/posts?tipo=2`); // notícias
     const noticias = await res.json();
 
     
@@ -37,7 +37,7 @@ noticias.sort((a, b) => {
       // Imagem
       const imgDiv = document.createElement("div");
       imgDiv.classList.add("no-img");
-      imgDiv.innerHTML = `<img src="http://localhost:3000/uploads/${pub.co_imagem}" alt="${pub.co_titulo}"
+      imgDiv.innerHTML = `<img src="${window.API_BASE_URL}/uploads/${pub.co_imagem}" alt="${pub.co_titulo}"
         />`
 
      const div2 = document.createElement("div");

@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const grid = document.querySelector(".pubs-grid");
 
   try {
-    const res = await fetch("http://localhost:3000/posts?tipo=1"); // PUBLICAÇÕES
+    const res = await fetch(`${window.API_BASE_URL}/posts?tipo=1`); // PUBLICAÇÕES
     const data = await res.json();
 
     // Limpa os cards estáticos
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         <div class="pub-card">
  
             <img class="pub-cover"
-              <img src="http://localhost:3000/uploads/${pub.co_imagem}" alt="${
+              <img src="${window.API_BASE_URL}/uploads/${pub.co_imagem}" alt="${
         pub.co_titulo
       }">
             

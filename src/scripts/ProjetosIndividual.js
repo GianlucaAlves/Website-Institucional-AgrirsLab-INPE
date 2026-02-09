@@ -15,9 +15,9 @@ document.addEventListener("DOMContentLoaded", async () => {
       return;
     }
 
-    const res = await fetch(`http://localhost:3000/posts/${id}`);
+    const res = await fetch(`${window.API_BASE_URL}/posts/${id}`);
     const projeto = await res.json();
-    console.log("Projeto Individual] Dados recebidos:", projeto); // LOG B
+    console.log("[Projeto Individual] Dados recebidos:", projeto); // LOG B
 
     if (!projeto) {
       console.error("Projeto não encontrada no backend");
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       ? projeto.co_atividades.replace(/\n/g, "<br>")
       : "";
    
-      const imgPath = `http://localhost:3000/uploads/${projeto.co_imagem}`;
+      const imgPath = `${window.API_BASE_URL}/uploads/${projeto.co_imagem}`;
       document.getElementById('pi-img').src = imgPath;
   } catch (err) {
     console.error("Erro ao carregar projeto:", err);
